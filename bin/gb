@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Create a new branch and setup proper origin for it.
+# If the branch already exists then it will properly track it.
+#
+# Usage: gb <branch-name>
+#
+# Example: gb twilio-feature
+
+if git rev-parse --verify "origin/$1" >/dev/null 2>&1; then
+    # Remote branch exists, track it
+    git checkout -b "$1" "origin/$1"
+else
+    # New branch, create and push
+    git checkout -b "$1"
+    git push -u origin "$1"
+fi
