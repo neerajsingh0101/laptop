@@ -14,4 +14,4 @@ alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup 
 # local reference origin/feature-x gets removed too.
 alias gpl='git pull --prune'
 
-alias gwip='`git add .` && `git commit -m "wip"` '
+alias gwip='git add . && git commit -m "wip"'
