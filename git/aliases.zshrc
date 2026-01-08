@@ -1,5 +1,5 @@
 alias gp='git push origin HEAD'
-alias gs='git status -sb'
+alias gs='git status'
 alias gap='git add -p'
 alias gc='git commit'
 alias gco='git checkout'
@@ -13,3 +13,5 @@ alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup 
 # It means if a branch was deleted on the remote (say origin/feature-x), then
 # local reference origin/feature-x gets removed too.
 alias gpl='git pull --prune'
+
+alias gwip='`git add .` && `git commit -m "wip"` '
