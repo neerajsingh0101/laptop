@@ -68,10 +68,6 @@ sudo scutil --set LocalHostName "neerajsingh0101"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
-# Enable lid wakeup
+# Enable lid wakeup. Meaning when laptop should wake up automatically when
+# lid is opened.
 sudo pmset -a lidwake 1
-
-# Restart automatically if the computer freezes
-sudo systemsetup -setrestartfreeze on
-
-
