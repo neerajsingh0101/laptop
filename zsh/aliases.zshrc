@@ -1,7 +1,5 @@
 alias reload!='. ~/.zshrc'
 
-alias cls='clear' # clear screen
-
 # prefer eza over gls
 alias ll='eza --classify=auto --color -l'
 alias la='eza --classify=auto --color -a -l'
