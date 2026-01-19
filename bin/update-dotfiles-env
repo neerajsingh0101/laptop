@@ -4,13 +4,6 @@
 # This is invoked by install.sh.
 # This creates ~/.dotfiles.env and sets DOTFILESD to the user's dotfiles directory.
 #
-# Usage:
-#   ruby set_dotfiles_env.rb [target_dir]
-#   ./set_dotfiles_env.rb [target_dir]
-#
-# Environment:
-#   DOTFILES_ENV_LINK (optional) - defaults to ~/.dotfiles.env
-
 require "fileutils"
 
 def abort_with(msg, code: 1)
@@ -57,8 +50,7 @@ updated_lines = lines.map do |line|
 end
 
 unless found
-  updated_lines << "\n" unless updated_lines.last&.end_with?("\n") || updated_lines.empty?
-  updated_lines << "# DOTFILESD is the directory where all the dotfiles repo is cloned\n"
+  line1 = "# DOTFILESD is the directory where all the dotfiles repo is cloned\n"
   updated_lines << replacement_line + "\n"
 end
 
@@ -66,5 +58,3 @@ end
 tmp = "#{file}.tmp.#{$$}"
 File.write(tmp, updated_lines.join)
 FileUtils.mv(tmp, file)
-
-puts %(Updated DOTFILESD in #{file} \u2192 #{replacement_line})
