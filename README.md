@@ -7,8 +7,11 @@
 * Execute `./macos/set-defaults.sh`.
 
 # Manual work
-* Set Dracula theme to iterm2. https://draculatheme.com/iterm
+* Set Dracula theme in iterm2. https://draculatheme.com/iterm
 
 # Highlights
 
-* Usage of `gap`. Most of the folks don't know about `git add -p`.
+* Git usage: `gs`, `gap`, `gp`, `gpl`, `gcm`
+* Using Atuin:
+* Using z:
+* listhing things: `ll`, `la`
