@@ -1,3 +1,6 @@
+[include]
+  path = ~/.gitconfig.local
+
 [advice]
   detachedHead = false
 
@@ -103,9 +106,6 @@
   # branches. Only the remote references are removed.
   prune = true
 
-[github]
-  user = neerajsingh0101
-
 [help]
   # Automatically correct and execute mistyped commands.
   autocorrect = 1
@@ -142,7 +142,3 @@
   # If you set `autoSetupRemote` to `true` then when you do just `git push` then the remote
   # tracking will be automatically set by Git.
   autoSetupRemote = true
-
-[user]
-  email = neeraj@bigbinary.com
-  name = Neeraj Singh
