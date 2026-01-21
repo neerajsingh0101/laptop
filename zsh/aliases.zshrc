@@ -29,6 +29,7 @@ alias c="code ."
 alias mv='mv -v'
 alias rm='rm -i -v'
 alias cp='cp -v'
+alias h='history'
 
 alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 x.com
 
