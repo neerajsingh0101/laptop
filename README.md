@@ -16,8 +16,6 @@
    the full path. More info at https://github.com/ajeetdsouza/zoxide.
 * Git usage: `gs`, `gap`, `gp`, `gpl`, `gcm`
 * Using Atuin:
-* Using z:
 * listhing things: `ll`, `la`
-* Command `dotfiles` opend up dotfiles.
+* Command `dotfiles` opens up dotfiles.
 * Command `dotfilesd` will get you to the directory of dotfiles.
-
