@@ -33,6 +33,10 @@
 * Command `dotfilesd` will get you to the directory of dotfiles.
 
 
+# Private Configuration
+
+The `zshrc` file loads `~/.dotfiles.local` if it exists. Use this file for private information like environment variables that shouldn't be committed to the repo.
+
 # Overrides for Neeraj
 
 Have a `wezterm_local.lua` file next to `.wezterm.lua` with the following content.
