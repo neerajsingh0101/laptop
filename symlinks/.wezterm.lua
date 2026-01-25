@@ -80,6 +80,15 @@ config.keys = {
     mods = 'CTRL|ALT',
     action = wezterm.action.CloseCurrentPane { confirm = true },
   },
+  -- Command K to clear the console
+  {
+    key = 'k',
+    mods = 'CMD',
+    action = wezterm.action.Multiple({
+        wezterm.action.ClearScrollback("ScrollbackAndViewport"),
+        wezterm.action.SendKey({ key = "L", mods = "CTRL" }), -- optional: like "clear"
+    }),
+  },
   -- Resize panes
   {
     --key = 'LeftArrow',

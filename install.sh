@@ -50,6 +50,7 @@ link_force "$DOTFILESD/symlinks/.gitignore" "$HOME/.gitignore"
 link_force "$DOTFILESD/symlinks/.irbrc"    "$HOME/.irbrc"
 link_force "$DOTFILESD/symlinks/.psqlrc"   "$HOME/.psqlrc"
 link_force "$DOTFILESD/symlinks/.wezterm.lua"   "$HOME/.wezterm.lua"
+link_force "$DOTFILESD/symlinks/.aerospace.toml"   "$HOME/.aerospace.toml"
 
 ruby ./bin/update-gitconfig-local.rb
 

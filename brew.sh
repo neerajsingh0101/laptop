@@ -55,3 +55,5 @@ cask_install meetingbar
 # font for sketchybar
 brew install --cask font-hack-nerd-font
 brew install font-hack-nerd-font
+
+brew install --cask nikitabobko/tap/aerospace
