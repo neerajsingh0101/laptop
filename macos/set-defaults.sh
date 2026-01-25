@@ -67,6 +67,10 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # lid is opened.
 sudo pmset -a lidwake 1
 
+# Automaticlly hide and show the menu bar
+defaults write NSGlobalDomain _HIHideMenuBar -bool true
+killall Dock
+
 # Disable the “power connected” chime (PowerChime)
 # This is the little ding you hear when plugging in a charger.
 # Safe to run multiple times.

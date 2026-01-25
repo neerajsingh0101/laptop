@@ -17,8 +17,12 @@ brew install git-delta # Usee for pager
 brew install httpd     # ab(apache bench) comes with this
 brew install k6        # see bin/simulate-traffice-k6
 brew install gh        # GitHub CLI
+brew install jq
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
+
+brew tap FelixKratz/formulae
+brew install sketchybar
 
 # try install; if it fails due to an existing app, adopt; if adopt fails, force.
 cask_install() {
@@ -47,3 +51,7 @@ cask_install zoom
 cask_install iterm2
 cask_install wezterm
 cask_install meetingbar
+
+# font for sketchybar
+brew install --cask font-hack-nerd-font
+brew install font-hack-nerd-font
