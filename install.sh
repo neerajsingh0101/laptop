@@ -56,12 +56,6 @@ ruby ./bin/update-gitconfig-local.rb
 
 source ./brew.sh
 
-# Installing sketchybar
-mkdir -p ~/.config/sketchybar/plugins
-cp $(brew --prefix)/share/sketchybar/examples/sketchybarrc ~/.config/sketchybar/sketchybarrc
-cp -r $(brew --prefix)/share/sketchybar/examples/plugins/ ~/.config/sketchybar/plugins/
-
-
 echo ""
 echo "Next: apply macOS defaults by running:"
 echo "  ./macos/set-defaults.sh"

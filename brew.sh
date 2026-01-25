@@ -21,9 +21,6 @@ brew install jq
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 
-brew tap FelixKratz/formulae
-brew install sketchybar
-
 # try install; if it fails due to an existing app, adopt; if adopt fails, force.
 cask_install() {
   local cask="$1"
@@ -52,8 +49,6 @@ cask_install iterm2
 cask_install wezterm
 cask_install meetingbar
 
-# font for sketchybar
-brew install --cask font-hack-nerd-font
 brew install font-hack-nerd-font
 
 brew install --cask nikitabobko/tap/aerospace

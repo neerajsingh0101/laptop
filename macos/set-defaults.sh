@@ -100,7 +100,7 @@ set_computer_name() {
   echo "  LocalHostName: ${current_lhn:-<not set>}"
   echo ""
 
-  printf "Enter the computer name to set (blank to skip): "
+  printf "Enter the computer name (just hit enter to skip setting up computer name): "
   read -r new_name
 
   if [ -z "$new_name" ]; then
