@@ -9,6 +9,33 @@ then
   source ~/.dotfiles.local
 fi
 
+# history setup
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+# zsh-autosuggestions (brew)
+if command -v brew >/dev/null 2>&1; then
+  ZSH_AUTOSUGGESTIONS="${HOMEBREW_PREFIX:-$(brew --prefix)}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  [[ -f "$ZSH_AUTOSUGGESTIONS" ]] && source "$ZSH_AUTOSUGGESTIONS"
+fi
+
+# zsh-syntax-highlighting (brew)
+if command -v brew >/dev/null 2>&1; then
+  ZSH_SYNTAX_HIGHLIGHTING="${HOMEBREW_PREFIX:-$(brew --prefix)}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+  [[ -f "$ZSH_SYNTAX_HIGHLIGHTING" ]] && source "$ZSH_SYNTAX_HIGHLIGHTING"
+fi
+
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Get all the .zshrc files and source them
 for f in $DOTFILESD/**/*.zshrc(.); do source "$f"; done
 

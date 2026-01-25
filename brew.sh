@@ -17,6 +17,8 @@ brew install git-delta # Usee for pager
 brew install httpd     # ab(apache bench) comes with this
 brew install k6        # see bin/simulate-traffice-k6
 brew install gh        # GitHub CLI
+brew install zsh-autosuggestions
+brew install zsh-syntax-highlighting
 
 # try install; if it fails due to an existing app, adopt; if adopt fails, force.
 cask_install() {

@@ -1,8 +1,9 @@
 alias reload!='. ~/.zshrc'
 
-# prefer eza over gls
-alias ll='eza --classify=auto --color -l'
-alias la='eza --classify=auto --color -a -l'
+# prefer eza
+alias ls="eza --icons=always"
+alias ll='eza --classify=auto --color -l --icons=always'
+alias la='eza --classify=auto --color -a -l --icons=always'
 
 # Easy way to copy publick key to the clipboard.
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
