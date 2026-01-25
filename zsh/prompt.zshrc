@@ -1,4 +1,4 @@
-# --- Minimal iTerm2-friendly prompt: icon + full path + git branch/status ---
+# --- Minimal prompt: icon + full path + git branch/status ---
 autoload -Uz colors && colors
 setopt prompt_subst
 
