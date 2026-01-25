@@ -61,7 +61,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Source zshrc files
 eval "$(atuin init zsh)"
 source "$DOTFILESD/git/aliases.zshrc"
-source "$DOTFILESD/zoxide/eval.zshrc"
+eval "$(zoxide init zsh)"
 source "$DOTFILESD/zsh/prompt.zshrc"
 source "$DOTFILESD/zsh/aliases.zshrc"
 
