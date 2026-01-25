@@ -1,14 +1,26 @@
+# Introduction
+
+Over the years my shell started loading slower and slower. The objective of starting
+with scratch for new dotilfes was to have a shell that is fast and looks decent.
+
+In the proess of creating the dotfiles and choosing the terminal emulator and window management
+tool I learned a lot. This dotfile, I hope, is a good default for people to get started with.
+
 # Installation
 
 * `cd ~/code/laptop` or wherever you want to clone this repo.
 * `git clone git@github.com:neerajsingh0101/dotfiles.git`
 * `cd dotfiles`
+* Your existing `~/.zshrc` file will be backed up as `.zshrc-bkp-YYYYMMDDSSSS`. So
+  if you don't want to using the dotfiles at anytime then you can go back to the
+  backedup `.zshrc` file.
 * Execute `./install.sh`.
-* Execute `./macos/set-defaults.sh`.
+* You can run `install.sh` any number of times.
+* Optionally execute `./macos/set-defaults.sh`.
 
-# Wezterm
-* Open wezterm instead of terminal or iterm.
-* Ctrl + Option gonverns wezterm
+# Wezterm as the terminal emultor
+* Open [wezterm](https://wezterm.org/) instead of opening terminal or iterm application. Some of you might be using [ghostyy](https://ghostty.org/) or [warp](https://www.warp.dev/). Still I'll say that you should give wezterm a try for a few days.
+* Ctrl + Option gonverns wezterm configuration.
 * Ctrl + Option + i -> split in two left hand side and right hand side
 * Ctrl + Option + u -> split in two top side and bottom side
 * Ctrl + Option + h -> navigatge to left pane
@@ -23,14 +35,12 @@
 
 # Highlights
 
-* cd a few times but after that you can just type `z bigbinary` and it will take you to
-   `~/code/bigbinary-stuff/bigbinary-website`. With the usage of `z` you don't have to type
-   the full path. More info at https://github.com/ajeetdsouza/zoxide.
-* Git usage: `gs`, `gap`, `gp`, `gpl`, `gcm`, `gr`
+* Usage of `z` command: https://neerajsingh0909.neetorecord.com/watch/c75ffff803ac46963f7d
 * Using Atuin: https://neerajsingh0909.neetorecord.com/watch/446ad749cd466d5db54b
 * listing things: `ls`,`ll`, `la` https://neerajsingh0909.neetorecord.com/watch/dd8d9bba322b10a3e9b4
 * fkill: https://neerajsingh0909.neetorecord.com/watch/d958a719c843d692e732
-* sysinfo lists info about your laptop.
+* Git usage: `gs`, `gap`, `gp`, `gpl`, `gcm`, `gr`
+* `sysinfo` lists info about your laptop.
 * Command `dotfiles` opens up dotfiles.
 * Command `dotfilesd` will get you to the directory of dotfiles.
 
