@@ -59,7 +59,7 @@ fi
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Source zshrc files
-source "$DOTFILESD/atuin/eval.zshrc"
+eval "$(atuin init zsh)"
 source "$DOTFILESD/git/aliases.zshrc"
 source "$DOTFILESD/zoxide/eval.zshrc"
 source "$DOTFILESD/zsh/prompt.zshrc"

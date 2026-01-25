@@ -27,8 +27,10 @@
    `~/code/bigbinary-stuff/bigbinary-website`. With the usage of `z` you don't have to type
    the full path. More info at https://github.com/ajeetdsouza/zoxide.
 * Git usage: `gs`, `gap`, `gp`, `gpl`, `gcm`, `gr`
-* Using Atuin:
-* listing things: `ls`,`ll`, `la`
+* Using Atuin: https://neerajsingh0909.neetorecord.com/watch/446ad749cd466d5db54b
+* listing things: `ls`,`ll`, `la` https://neerajsingh0909.neetorecord.com/watch/dd8d9bba322b10a3e9b4
+* fkill: https://neerajsingh0909.neetorecord.com/watch/d958a719c843d692e732
+* sysinfo lists info about your laptop.
 * Command `dotfiles` opens up dotfiles.
 * Command `dotfilesd` will get you to the directory of dotfiles.
 
