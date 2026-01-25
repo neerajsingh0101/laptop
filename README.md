@@ -6,8 +6,20 @@
 * Execute `./install.sh`.
 * Execute `./macos/set-defaults.sh`.
 
-# Manual work
-* Set Dracula theme in iterm2. https://draculatheme.com/iterm
+# Wezterm
+* Open wezterm instead of terminal or iterm.
+* Ctrl + Option converns wezterm
+* Ctrl + Option + i -> split in two left hand side and right hand side
+* Ctrl + Option + u -> split in two top side and bottom side
+* Ctrl + Option + h -> navigatge to left pane
+* Ctrl + Option + l -> navigatge to right pane
+* Ctrl + Option + j -> navigatge to the bottom pane
+* Ctrl + Option + k -> navigatge to the top pane
+* Ctrl + Option + w -> Quit the pane
+* Ctrl + Option + up arrow -> resize the pane and move up
+* Ctrl + Option + down arrow -> resize the pane and move down
+* Ctrl + Option + left arrow -> resize the pane and move left
+* Ctrl + Option + right arrow -> resize the pane and move right
 
 # Highlights
 

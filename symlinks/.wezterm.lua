@@ -1,13 +1,8 @@
--- Pull in the wezterm API
 local wezterm = require 'wezterm'
--- This will hold the configuration.
 local config = wezterm.config_builder()
--- This is where you actually apply your config choices.
--- For example, changing the initial geometry for new windows:
+
 config.initial_cols = 120
 config.initial_rows = 28
--- or, changing the font size and color scheme.
--- WezTerm bundles JetBrains Mono + Nerd Font Symbols + emoji;
 config.font = wezterm.font_with_fallback({
   "JetBrains Mono",
   "Symbols Nerd Font Mono",
@@ -26,6 +21,24 @@ config.window_padding = {
   top = 8,
   bottom = 8,
 }
+
+-- Disable quit confirmation
+config.window_close_confirmation = 'NeverPrompt'
+
+-- Default (generic) bindings
+local pane_resize_keys = {
+  left  = "LeftArrow",
+  right = "RightArrow",
+}
+
+-- Try to load local overrides (NOT committed)
+local ok, local_overrides = pcall(require, "wezterm_local")
+if ok and type(local_overrides) == "table" and type(local_overrides.pane_resize_keys) == "table" then
+  -- Override only what is provided
+  pane_resize_keys.left  = local_overrides.pane_resize_keys.left  or pane_resize_keys.left
+  pane_resize_keys.right = local_overrides.pane_resize_keys.right or pane_resize_keys.right
+end
+
 -- Key bindings for splitting panes
 config.keys = {
   -- Split (left/right)
@@ -40,7 +53,7 @@ config.keys = {
     mods = 'CTRL|ALT',
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
   },
-  -- Navigate between panes with Alt+Arrow keys
+  -- Navigate between panes with Ctrl+Alt keys
   {
     key = 'h',
     mods = 'CTRL|ALT',
@@ -69,12 +82,14 @@ config.keys = {
   },
   -- Resize panes
   {
-    key = 'LeftArrow',
+    --key = 'LeftArrow',
+    key = '9', -- stands for (
     mods = 'CTRL|ALT',
     action = wezterm.action.AdjustPaneSize { 'Left', 5 },
   },
   {
-    key = 'RightArrow',
+    --key = 'RightArrow',
+    key = '0', -- stands for )
     mods = 'CTRL|ALT',
     action = wezterm.action.AdjustPaneSize { 'Right', 5 },
   },
@@ -90,10 +105,10 @@ config.keys = {
   },
 }
 
+-- Dim the inactive pane so that we can detect the active pane
 config.inactive_pane_hsb = {
   saturation = 0.5,
   brightness = 0.3,
 }
 
--- Finally, return the configuration to wezterm:
 return config
