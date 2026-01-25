@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Force kill processes using fzf for selection
+# Supports multi-select with TAB
+#
+# Usage: fkill
+
+pids=$(ps -eo pid=,command= | fzf -m --prompt='kill -9> ' --header='TAB to multi-select' | awk '{print $1}')
+[ -n "$pids" ] || exit 0
+echo "$pids" | xargs kill -9

@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# List only unique lines from a file
+#
+# Usage: uniqlines <file>
+
+sort "$1" | uniq -u
