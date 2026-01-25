@@ -9,14 +9,33 @@ then
   source ~/.dotfiles.local
 fi
 
-# history setup
+######## HISTORY SETUP ######################
+
+# tell zsh where to store your command history
 HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
+
+# store last ten thousand history commands
+SAVEHIST=10000
+
+# how many histories to keep in memory. For more it will have to read from the disk
 HISTSIZE=999
+
+# Share command history across multiple running zsh sessions
 setopt share_history
+
+# Drop duplicates before dropping history while trying to not exceed HISTIZE value
 setopt hist_expire_dups_first
+
+# Don’t record a command if it’s exactly the same as the previous command in history.
+# If you run ls then ls again immediately, the second one won’t be added.
+# It only ignores consecutive duplicates.
 setopt hist_ignore_dups
+
+# When executing history commands like !!, !$, !grep the command will be first expanded
+# you will get to see the command before it's executed to avoid cases like I didn't want
+# to run that command
 setopt hist_verify
+
 
 # completion using arrow keys (based on history)
 bindkey '^[[A' history-search-backward
