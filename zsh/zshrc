@@ -63,10 +63,11 @@ eval "$(atuin init zsh)"
 source "$DOTFILESD/git/aliases.zshrc"
 eval "$(zoxide init zsh)"
 source "$DOTFILESD/zsh/prompt.zshrc"
+
 ##### ALIASES #####
 alias reload!='. ~/.zshrc'
 
-##### GIT aliases #########
+# GIT aliases
 alias gp='git push origin HEAD'
 alias gs='git status'
 alias gap='git add -p'
@@ -101,7 +102,7 @@ then
   source `brew --prefix`/etc/grc.bashrc
 fi
 
-# Easier navigation: .., ..., ~ and -
+# Easier navigation
 alias cd..="cd .."
 alias ..="cd .."
 alias ...="cd ../.."
