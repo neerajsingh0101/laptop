@@ -43,11 +43,7 @@ tool I learned a lot. This dotfile, I hope, is a good default for people to get 
 * `sysinfo` lists info about your laptop.
 * Command `dotfiles` opens up dotfiles.
 * Command `dotfilesd` will get you to the directory of dotfiles.
-
-
-# Private Configuration
-
-The `zshrc` file loads `~/.dotfiles.local` if it exists. Use this file for private information like environment variables that shouldn't be committed to the repo.
+* This `zshrc` file loads `~/.dotfiles.local` if it exists. Use this file for private information like environment variables that shouldn't be committed to the repo.
 
 # Overrides for Neeraj
 
