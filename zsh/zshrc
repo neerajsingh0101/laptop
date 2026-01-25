@@ -80,17 +80,6 @@ autoload -Uz compinit
 # It loads completion definitions so things like git <TAB> or brew <TAB> work nicely.
 compinit
 
-# Copy pwd to clipboard
-pwdd(){ local dir="$PWD"; print -rn -- "$dir" | pbcopy; echo "copied: $dir to clipboard."; }
-
-# force kill
-fkill() {
-  local pids
-  pids=$(ps -eo pid=,command= | fzf -m --prompt='kill -9> ' --header='TAB to multi-select' | awk '{print $1}')
-  [[ -n "$pids" ]] || return 0
-  echo "$pids" | xargs kill -9
-}
-
 eval "$(rbenv init - zsh)"
 
 export NVM_DIR="$HOME/.nvm"

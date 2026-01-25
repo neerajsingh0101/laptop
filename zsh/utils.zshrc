@@ -35,3 +35,14 @@ sysinfo() {
   echo
   system_profiler SPDisplaysDataType
 }
+
+# Copy pwd to clipboard
+pwdd(){ local dir="$PWD"; print -rn -- "$dir" | pbcopy; echo "copied: $dir to clipboard."; }
+
+# force kill
+fkill() {
+  local pids
+  pids=$(ps -eo pid=,command= | fzf -m --prompt='kill -9> ' --header='TAB to multi-select' | awk '{print $1}')
+  [[ -n "$pids" ]] || return 0
+  echo "$pids" | xargs kill -9
+}
