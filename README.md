@@ -38,7 +38,7 @@ tool I learned a lot. This dotfile, I hope, is a good default for people to get 
 `z` is a smarter `cd` command. It comes from [zoxide](https://github.com/ajeetdsouza/zoxide).
 https://neerajsingh0909.neetorecord.com/watch/c75ffff803ac46963f7d
 
-### Atuin
+### Atuin for better shell history
 https://neerajsingh0909.neetorecord.com/watch/446ad749cd466d5db54b
 
 ### Listing things
