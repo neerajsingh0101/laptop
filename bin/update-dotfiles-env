@@ -50,7 +50,7 @@ updated_lines = lines.map do |line|
 end
 
 unless found
-  line1 = "# DOTFILESD is the directory where all the dotfiles repo is cloned\n"
+  line1 = "# DOTFILESD is the directory where the dotfiles repo is cloned\n"
   updated_lines << replacement_line + "\n"
 end
 
