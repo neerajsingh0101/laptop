@@ -7,24 +7,9 @@
 require "fileutils"
 
 home = Dir.home
-link = File.join(home, ".dotfiles.env")
-
-# Directory to set as DOTFILESD (defaults to current working directory)
 target = Dir.pwd
-
-p = target.start_with?(home) ? target.sub(/\A#{Regexp.escape(home)}/, "$HOME") : target
-puts "home is #{home}"
-puts "link is #{link}"
-puts "target is #{target}"
-puts "p is #{p}"
-
+dotfilesd_value = target.start_with?(home) ? target.sub(/\A#{Regexp.escape(home)}/, "$HOME") : target
 file  = target + "/zsh/dotfiles.env"
+content = %(export DOTFILESD="#{dotfilesd_value}")
 
-puts "file is #{file}"
-
-content = %(export DOTFILESD="#{p}")
-
-# Write atomically to avoid partial writes
-tmp = "#{file}.tmp.#{$$}"
-File.write(tmp, content)
-FileUtils.mv(tmp, file)
+File.write(file, content)
