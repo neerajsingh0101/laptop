@@ -10,8 +10,8 @@ set -e
 # Update DOTFILESD based on where install.sh is being run from
 ./bin/create-dotfiles-env
 
-# Load dotfiles.env
-[ -f "$HOME/.dotfiles.env" ] && source "$HOME/.dotfiles.env"
+# Load dotfiles.env (source local file since $HOME symlink may not exist yet)
+[ -f "./zsh/dotfiles.env" ] && source "./zsh/dotfiles.env"
 
 # Remove destination (file/symlink/dir) and recreate symlink
 # If dst is a real file (not a symlink), back it up first
