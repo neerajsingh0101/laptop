@@ -59,7 +59,7 @@ fi
 
 ruby ./bin/update-gitconfig-local.rb
 
-source ./brew.sh
+# source ./brew.sh
 
 echo ""
 echo "Next: apply macOS defaults by running:"

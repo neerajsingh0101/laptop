@@ -10,46 +10,21 @@ home = Dir.home
 link = File.join(home, ".dotfiles.env")
 
 # Directory to set as DOTFILESD (defaults to current working directory)
-target = ARGV[0] || Dir.pwd
+target = Dir.pwd
 
-# Make it literal $HOME/... for portability in the env file
 p = target.start_with?(home) ? target.sub(/\A#{Regexp.escape(home)}/, "$HOME") : target
+puts "home is #{home}"
+puts "link is #{link}"
+puts "target is #{target}"
+puts "p is #{p}"
 
-# Resolve where we should actually write (follow symlink target if link is a symlink)
-file = link
-if File.symlink?(link)
-  t = File.readlink(link)
-  if t.start_with?("/")
-    file = t
-  else
-    base_dir = File.dirname(link)
-    file = File.expand_path(t, base_dir)
-  end
-end
+file  = target + "/zsh/dotfiles.env"
 
-# Ensure parent directory exists and file exists
-FileUtils.mkdir_p(File.dirname(file))
-FileUtils.touch(file)
+puts "file is #{file}"
 
-replacement_line = %(export DOTFILESD="#{p}")
-lines = File.exist?(file) ? File.read(file).lines : []
-
-found = false
-updated_lines = lines.map do |line|
-  if line.match?(/\Aexport DOTFILESD=/)
-    found = true
-    replacement_line + "\n"
-  else
-    line
-  end
-end
-
-unless found
-  line1 = "# DOTFILESD is the directory where the dotfiles repo is cloned\n"
-  updated_lines << replacement_line + "\n"
-end
+content = %(export DOTFILESD="#{p}")
 
 # Write atomically to avoid partial writes
 tmp = "#{file}.tmp.#{$$}"
-File.write(tmp, updated_lines.join)
+File.write(tmp, content)
 FileUtils.mv(tmp, file)
