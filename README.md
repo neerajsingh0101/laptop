@@ -1,10 +1,6 @@
 # Introduction
 
-Over the years my shell started loading slower and slower. The objective of starting
-with scratch for new dotilfes was to have a shell that is fast and looks decent.
-
-In the proess of creating the dotfiles and choosing the terminal emulator and window management
-tool I learned a lot. This dotfile, I hope, is a good default for people to get started with.
+A simple dotfile that gives sensible defaults, is fast and looks beautiful out of the box.
 
 # Installation
 
