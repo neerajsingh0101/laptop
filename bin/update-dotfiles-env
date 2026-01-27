@@ -6,13 +6,8 @@
 #
 require "fileutils"
 
-def abort_with(msg, code: 1)
-  warn msg
-  exit code
-end
-
 home = Dir.home
-link = ENV["DOTFILES_ENV_LINK"] || File.join(home, ".dotfiles.env")
+link = File.join(home, ".dotfiles.env")
 
 # Directory to set as DOTFILESD (defaults to current working directory)
 target = ARGV[0] || Dir.pwd
