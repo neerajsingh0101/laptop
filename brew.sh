@@ -20,6 +20,7 @@ brew install gh        # GitHub CLI
 brew install jq
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
+brew rbenv
 
 # try install; if it fails due to an existing app, adopt; if adopt fails, force.
 cask_install() {
@@ -52,3 +53,6 @@ cask_install meetingbar
 brew install font-hack-nerd-font
 
 # brew install --cask nikitabobko/tap/aerospace
+
+# Install nvm (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
