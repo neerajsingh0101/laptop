@@ -1,3 +1,12 @@
+# TOC
+
+* Introduction
+* dotfiles
+* Mac defaults
+* Mac applications
+* Profiles for managing gmail accounts
+* Getting to zero inbox
+
 # Setting up Mac laptop
 
 The goal of this writeup is to provide sensible defaults to get started with.
@@ -36,3 +45,36 @@ which sits on the menu bar.
 
 [Speediness](https://sindresorhus.com/speediness) is a free Mac app that tests my upload and download speed. Mostly I use it to check
 if I have Internet access or not.
+
+## Raycast
+
+[Raycast](https://raycast.com) is a wonderful Mac app that has replaced many Mac apps for me.
+
+### Installing Raycast
+
+Visit [Raycast exports](https://www.dropbox.com/scl/fo/5zwdp2ydu0ca0l4lkxe0w/APQ_dCDs0PgH6e3_zeodLPM?rlkey=vvex28wd4nlnj9y14sgwf1ex5&dl=0) and look for the most recent export. Download the file.
+
+Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
+
+
+Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
+
+
+Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
+
+
+Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
+
+
+Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
+
+
+Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
+
+
+Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
+
+
+Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
+
+Now you should be ready to use Raycast with all the Settings of Neeraj. 
