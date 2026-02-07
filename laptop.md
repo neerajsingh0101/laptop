@@ -56,25 +56,10 @@ Visit [Raycast exports](https://www.dropbox.com/scl/fo/5zwdp2ydu0ca0l4lkxe0w/APQ
 
 Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
 
+Now you should be ready to use Raycast with all the Settings of Neeraj. The whole point of importing the settings was to start with sensible defaults. As you learn more about Raycast you should change the settings to match your working style.
 
-Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
+Here is what your Raycast can do now.
 
+#### Clipboard history
 
-Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
-
-
-Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
-
-
-Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
-
-
-Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
-
-
-Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
-
-
-Open Raycast. Hit Command + `,`. Click on **Advanced** tab. Scroll down and click on **Import**. Import the downloaded file in the previous step.
-
-Now you should be ready to use Raycast with all the Settings of Neeraj. 
+After copying we do Command + v to paste. If you add Shift to it then you would see the history of all previously copied values. Commnd + Shift + v will let you see the past clipboards. You can even search to find the right value.
