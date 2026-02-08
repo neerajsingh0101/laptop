@@ -16,7 +16,7 @@ A simple dotfile that gives sensible defaults, is fast and looks beautiful out o
 
 # Usage
 
-## Wezterm as the terminal emultor
+## Wezterm as the terminal emulator
 * Open [wezterm](https://wezterm.org/) instead of opening terminal or iterm application. Some of you might be using [ghostyy](https://ghostty.org/) or [warp](https://www.warp.dev/). Still I'll say that you should give wezterm a try for a few days.
 * Ctrl + Option gonverns wezterm configuration.
 * Ctrl + Option + i -> split in two left hand side and right hand side
