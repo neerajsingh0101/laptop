@@ -56,7 +56,7 @@ Here is what your Raycast can do now.
 
 ### Clipboard history
 
-After copying we do Command + v to paste. If you add Shift to it then you would see the history of all previously copied values. Commnd + Shift + v will let you see the past clipboards. You can even search to find the right value.
+After copying we do Command + v to paste. If you add Shift to it then you would see the history of all previously copied values. Command + Shift + v will let you see the past clipboards. You can even search to find the right value.
 
 ### Hot keys for common applications
 
@@ -73,12 +73,12 @@ If you want to get to Slack app then you don't have to cycle through all open ap
 
 ### Resizing screens
 
-There are some commonly used resizing options preconfigured. Before we discuss them please note that if you are not familar with Vim then the
-choice of keys `h`, `j`, `k` and `l` might seem odd. In vim these keys are configured to move in different directions. For our fingures it's
+There are some commonly used resizing options preconfigured. Before we discuss them please note that if you are not familiar with Vim then the
+choice of keys `h`, `j`, `k` and `l` might seem odd. In vim these keys are configured to move in different directions. For our fingers it's
 much easier to reach `h j k l` than arrows.
 
-If you are not familar with vim then these keys might take a while to get used to it but don't get discouraged. Once you have masterd them
-then you would be flyging through your windows magically. Here are general settings in vim.
+If you are not familiar with vim then these keys might take a while to get used to it but don't get discouraged. Once you have mastered them
+then you would be flying through your windows magically. Here are general settings in vim.
 
 * h -> go left
 * j -> go down
@@ -110,7 +110,7 @@ to move the application in the other direction.
 ### Neeto GitHub repo shortcuts
 
 If you want to go to neeto-cal-web repo to create an issue then in the browser you can type `/calw` and it will
-do the right thing. Here `cal` stands for `neet-cal` and `w` stands for `web`. Similarly if you want to go to
+do the right thing. Here `cal` stands for `neeto-cal` and `w` stands for `web`. Similarly if you want to go to
 neeto-form-rn repo then type `/formr`.
 
 What I just showed you is the power of snippets. Snippets are small keywords that expand to full text. You can use
@@ -132,9 +132,9 @@ and appointments.
 [Menu Bar Calendar](https://sindresorhus.com/menu-bar-calendar) is a free calendar app
 which sits on the menu bar.
 
-## Firwally
+## Firewally
 
-[Firewally](https://nektony.com/firewally) is a free Mac app that let's me see all the applications that are sending and receiving data from the Internet. With a click of a button I can cut off the network access of any application.
+[Firewally](https://nektony.com/firewally) is a free Mac app that lets me see all the applications that are sending and receiving data from the Internet. With a click of a button I can cut off the network access of any application.
 
 ## Speediness
 

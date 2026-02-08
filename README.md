@@ -8,8 +8,8 @@ A simple dotfile that gives sensible defaults, is fast and looks beautiful out o
 * `git clone git@github.com:neerajsingh0101/dotfiles.git`
 * `cd dotfiles`
 * Your existing `~/.zshrc` file will be backed up as `.zshrc-bkp-YYYYMMDDSSSS`. So
-  if you don't want to using the dotfiles at anytime then you can go back to the
-  backedup `.zshrc` file.
+  if you don't want to use the dotfiles at anytime then you can go back to the
+  backed up `.zshrc` file.
 * Execute `./install.sh`.
 * You can run `install.sh` any number of times.
 * Optionally execute `./macos/set-defaults.sh`.
@@ -17,13 +17,13 @@ A simple dotfile that gives sensible defaults, is fast and looks beautiful out o
 
 # Wezterm as the terminal emulator
 * Open [wezterm](https://wezterm.org/) instead of opening terminal or iterm application. Some of you might be using [ghostyy](https://ghostty.org/) or [warp](https://www.warp.dev/). Still I'll say that you should give wezterm a try for a few days.
-* Ctrl + Option gonverns wezterm configuration.
+* Ctrl + Option governs wezterm configuration.
 * Ctrl + Option + i -> split in two left hand side and right hand side
 * Ctrl + Option + u -> split in two top side and bottom side
-* Ctrl + Option + h -> navigatge to left pane
-* Ctrl + Option + l -> navigatge to right pane
-* Ctrl + Option + j -> navigatge to the bottom pane
-* Ctrl + Option + k -> navigatge to the top pane
+* Ctrl + Option + h -> navigate to left pane
+* Ctrl + Option + l -> navigate to right pane
+* Ctrl + Option + j -> navigate to the bottom pane
+* Ctrl + Option + k -> navigate to the top pane
 * Ctrl + Option + w -> Quit the pane
 * Ctrl + Option + up arrow -> resize the pane and move up
 * Ctrl + Option + down arrow -> resize the pane and move down
@@ -55,5 +55,5 @@ This `zshrc` file loads `~/.dotfiles.local` if it exists. Use this file for priv
 
 # Mac defaults
 
-Have a look at `macos/set-defaults.sh`. I don't like everytime Mac boots it makes a sound. So I've disabled it.
+Have a look at `macos/set-defaults.sh`. I don't like every time Mac boots it makes a sound. So I've disabled it.
 Similarly I don't like warning when I'm emptying trash.
