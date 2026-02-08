@@ -56,16 +56,3 @@ This `zshrc` file loads `~/.dotfiles.local` if it exists. Use this file for priv
 
 Have a look at `macos/set-defaults.sh`. I don't like everytime Mac boots it makes a sound. So I've disabled it.
 Similarly I don't like warning when I'm emptying trash.
-
-# Overrides for Neeraj
-
-Have a `wezterm_local.lua` file next to `.wezterm.lua` with the following content.
-
-```
-return {
-  pane_resize_keys = {
-    left = "9",  -- your special keyboard emits this for left
-    right = "0", -- your special keyboard emits this for right
-  },
-}
-```
