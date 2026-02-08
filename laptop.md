@@ -1,11 +1,9 @@
 # TOC
 
-* Introduction
-* dotfiles
-* Mac defaults
-* Mac applications
-* Profiles for managing gmail accounts
-* Getting to zero inbox
+* [Introduction](#introduction)
+* [dotfiles](#dotfiles)
+* [Mac defaults](#mac-defaults)
+* [Mac applications](#mac-applications)
 
 # Introduction
 
