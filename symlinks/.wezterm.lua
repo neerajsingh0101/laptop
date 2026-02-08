@@ -128,4 +128,23 @@ config.inactive_pane_hsb = {
   brightness = 0.3,
 }
 
+function basename(s)
+	return string.gsub(s, "(.*[/\\])(.*)", "%2")
+end
+
+-- Set the tab title to currently running foreground process name
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+	local pane = tab.active_pane
+	local title = basename(pane.foreground_process_name) .. " " .. (tab.tab_index + 1)
+	local color = "#0f1419"
+	if tab.is_active then
+		color = "darkblue"
+	end
+	return {
+		{ Background = { Color = color } },
+		{ Text = " " .. title .. " " },
+	}
+end)
+
+
 return config
