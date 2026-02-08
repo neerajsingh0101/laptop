@@ -56,11 +56,11 @@ You should now be ready to use Raycast with all the settings from Neeraj. The wh
 
 Here is what your Raycast can do now.
 
-#### Clipboard history
+### Clipboard history
 
 After copying we do Command + v to paste. If you add Shift to it then you would see the history of all previously copied values. Commnd + Shift + v will let you see the past clipboards. You can even search to find the right value.
 
-#### Hot keys for common applications
+### Hot keys for common applications
 
 If you want to get to Slack app then you don't have to cycle through all open apps to get to Slack. Here are the hot keys for certain applications:
 
@@ -73,7 +73,7 @@ If you want to get to Slack app then you don't have to cycle through all open ap
 * Ctrl + o -> Obsidian
 
 
-#### Resizing screens
+### Resizing screens
 
 There are some commonly used resizing options preconfigured. Before we discuss them please note that if you are not familar with Vim then the
 choice of keys `h`, `j`, `k` and `l` might seem odd. In vim these keys are configured to move in different directions. For our fingures it's
@@ -103,13 +103,13 @@ Ctrl + Alt + l -> take the right 25% of the vertical screen
 
 Ctrl + m -> to maximize any application in the given monitor
 
-#### Multiple monitor
+### Multiple monitor
 
 If you use an external monitor and you want to move an application from one monitor to another monitor then
 use `Ctrl + Alt + ]` to move the application to the monitor to the right of the main monitor. Use `Ctrl + Alt + [`
 to move the application in the other direction.
 
-#### Neeto GitHub repo shortcuts
+### Neeto GitHub repo shortcuts
 
 If you want to go to neeto-cal-web repo to create an issue then in the browser you can type `/calw` and it will
 do the right thing. Here `cal` stands for `neet-cal` and `w` stands for `web`. Similarly if you want to go to
