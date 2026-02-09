@@ -21,6 +21,7 @@ brew install jq
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 brew install rbenv
+brew install aicommits
 
 # try install; if it fails due to an existing app, adopt; if adopt fails, force.
 cask_install() {
