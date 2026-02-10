@@ -29,7 +29,7 @@ README for more information.
 
 Here are some Mac applications that I use and I recommend.
 
-## Emoji app
+## Rocket Emoji app
 
 [Rocket](https://matthewpalmer.net/rocket/) is a free Mac app that lets you type emojis slack style.
 Download the app. Install it. Open it.
@@ -39,6 +39,11 @@ Now open google doc and do the same. Do the same in google sheet.
 
 Point is once this app is installed then you can type emojis really fast Slack style. This is so good that
 it should be the default feature of Mac and Apple should ship it out of the box.
+
+Rocket by default disables the trigger key `:` in applications like `Terminal` and `iTerm2`. If you are using
+wezterm then you should add wezterm to this list. Click on Rocket application from the top menu bar. Click on
+"Preferences". Add wezterm to the list of "Disable apps".
+
 
 ## Raycast
 
