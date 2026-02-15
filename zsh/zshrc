@@ -36,7 +36,6 @@ setopt hist_ignore_dups
 # to run that command
 setopt hist_verify
 
-
 # Remap what Up and Down arrows do in Zsh.
 # ^[ means the ESC character. So ^[[A is literally: ESC, [, A.
 # ^[[A = Up arrow
@@ -58,7 +57,6 @@ fi
 
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Source zshrc files
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 source "$DOTFILESD/zsh/prompt.zshrc"
@@ -67,13 +65,14 @@ source "$DOTFILESD/zsh/prompt.zshrc"
 alias reload!='. ~/.zshrc'
 
 # GIT aliases
-alias gp='git push origin HEAD'
+alias gps='git push origin HEAD'
 alias gs='git status'
 alias gap='git add -p'
 alias gc='git commit'
 alias gco='git checkout'
 alias glg='git lg'
 alias glg2='git lg2'
+alias gwip='git add . && git commit -m "wip"'
 alias aic="aicommits"
 
 # git root
@@ -83,8 +82,6 @@ alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup 
 # It means if a branch was deleted on the remote (say origin/feature-x), then
 # local reference origin/feature-x gets removed too.
 alias gpl='git pull --prune'
-
-alias gwip='git add . && git commit -m "wip"'
 
 # prefer eza
 alias ls="eza --icons=always"
