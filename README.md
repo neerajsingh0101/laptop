@@ -7,7 +7,7 @@ A simple dotfile that gives sensible defaults, is fast and looks beautiful out o
 ```
 mkdir -p ~/code/laptop
 cd ~/code/laptop
-git clone git@github.com:neerajsingh0101/dotfiles.git
+git clone https://github.com/neerajsingh0101/dotfiles.git
 cd dotfiles
 ```
 
