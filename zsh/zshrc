@@ -217,3 +217,5 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+
+eval "$(mise activate zsh)"
