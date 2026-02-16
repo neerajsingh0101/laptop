@@ -6,19 +6,15 @@ A simple dotfile that gives sensible defaults, is fast and looks beautiful out o
 
 ```
 mkdir -p ~/code/laptop
+cd ~/code/laptop
+git clone git@github.com:neerajsingh0101/dotfiles.git
+cd dotfiles
 ```
 
-* `mkdir -p ~/code/laptop`.
-* `cd ~/code/laptop` or wherever you want to clone this repo.
-* `git clone git@github.com:neerajsingh0101/dotfiles.git`
-* `cd dotfiles`
-* Your existing `~/.zshrc` file will be backed up as `.zshrc-bkp-YYYYMMDDSSSS`. So
-  if you don't want to use the dotfiles at anytime then you can go back to the
-  backed up `.zshrc` file.
+* Before executing the next command, please note that the next command will back up your existing `~/.zshrc` file as `.zshrc-bkp-YYYYMMDDSSSS`. So
+  If you don't want to use the dotfiles, you can revert to the backed-up `.zshrc` file.
 * Execute `./bin/install`.
 * You can run `./bin/install` any number of times.
-* Optionally execute `./bin/customize-macos`.
-
 
 # Wezterm as the terminal emulator
 * Open [wezterm](https://wezterm.org/) instead of opening terminal or iterm application. Some of you might be using [ghostyy](https://ghostty.org/) or [warp](https://www.warp.dev/). Still I'll say that you should give wezterm a try for a few days.
