@@ -10,8 +10,8 @@ A simple dotfile that gives sensible defaults, is fast and looks beautiful out o
 * Your existing `~/.zshrc` file will be backed up as `.zshrc-bkp-YYYYMMDDSSSS`. So
   if you don't want to use the dotfiles at anytime then you can go back to the
   backed up `.zshrc` file.
-* Execute `./install.sh`.
-* You can run `install.sh` any number of times.
+* Execute `./bin/install`.
+* You can run `./bin/install` any number of times.
 * Optionally execute `./macos/set-defaults.sh`.
 
 
