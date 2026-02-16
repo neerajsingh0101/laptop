@@ -175,7 +175,8 @@ autoload -Uz compinit
 # It loads completion definitions so things like git <TAB> or brew <TAB> work nicely.
 compinit
 
-eval "$(rbenv init - zsh)"
+# eval "$(rbenv init - zsh)"
+eval "$(mise activate zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -218,4 +219,3 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 
-eval "$(mise activate zsh)"
