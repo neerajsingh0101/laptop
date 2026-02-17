@@ -71,24 +71,23 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
-# Save Homebrew's installed location.
-BREW_PREFIX=$(brew --prefix)
-
 brew install zoxide    # for jumping around
 brew install fzf
 brew install atuin     # better history
 brew install eza       # this is replacement for ls
-brew install git-delta # Usee for pager
+brew install git-delta # Used in pager
 brew install httpd     # ab(apache bench) comes with this
-brew install k6        # see bin/simulate-traffice-k6
+brew install k6        # see bin/simulate-traffic-k6
 brew install gh        # GitHub CLI
 brew install jq
+brew install yarn
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
-brew install rbenv
+brew install mise
 brew install aicommits
 brew install postgresql@18
 brew install redis
+brew install font-hack-nerd-font
 
 # try install; if it fails due to an existing app, adopt; if adopt fails, force.
 cask_install() {
@@ -114,13 +113,8 @@ cask_install iterm2
 cask_install wezterm
 cask_install meetingbar
 
-brew install font-hack-nerd-font
-
-# Install nvm (Node Version Manager)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-
 # Install Claude Code
-curl -fsSL https://claude.ai/install.sh | bash
+curl -fsSL https://claude.ai/install.sh | sh
 
 echo ""
 echo "Next: apply macOS defaults by running:"
