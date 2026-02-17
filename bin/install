@@ -119,6 +119,9 @@ brew install font-hack-nerd-font
 # Install nvm (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
+# Install Claude Code
+curl -fsSL https://claude.ai/install.sh | bash
+
 echo ""
 echo "Next: apply macOS defaults by running:"
 echo "  ./bin/customize-macos"
