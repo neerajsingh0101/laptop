@@ -63,7 +63,7 @@ puts ""
 puts ""
 puts "===================================="
 puts "======= Generating SSH key ======="
-Puts "Just hit enter when you are asked to enter passphrase."
+puts "Just hit enter when you are asked to enter passphrase."
 run!(%(ssh-keygen -t ed25519 -C "#{email}" -f "#{key_path}"))
 
 puts
