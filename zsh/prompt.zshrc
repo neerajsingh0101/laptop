@@ -26,5 +26,6 @@ __git_prompt_info() {
 }
 
 # Icon + full pwd + git info + newline + prompt char
-PROMPT='%{$fg[magenta]%}❯%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%}$(__git_prompt_info)
+PROMPT='
+%{$fg[magenta]%}❯%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%}$(__git_prompt_info)
 %{$fg[magenta]%}›%{$reset_color%} '
