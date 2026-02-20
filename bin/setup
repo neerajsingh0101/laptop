@@ -122,7 +122,7 @@ echo ""
 echo "Would you like to reset Raycast settings and apply"
 echo "the ones provided by Neeto?"
 echo "If you have not customized your Raycast yet then you should hit \"c\"."
-read -p "Hit Enter to keep current settings, or press c to change: " answer
+read -p "Hit Enter to keep current settings. Press c to change." answer
 if [[ "$answer" =~ ^[Cc](hange)?$ ]]; then
   ./bin/fetch-latest-raycast-export
 
@@ -142,6 +142,21 @@ if [[ "$answer" =~ ^[Cc](hange)?$ ]]; then
   done
 fi
 
-echo "Applying customize macos"
+echo ""
+echo "Applying customize Macos"
+echo "You will be asked to provide your laptop password"
 ./bin/customize-macos
 
+
+echo ""
+echo "Would you like to set up a GitHub SSH key?"
+echo "If you already have one configured, just hit Enter to skip."
+read -p "Hit Enter to skip, or press c to set up your SSH key: " answer
+if [[ "$answer" =~ ^[Cc](hange)?$ ]]; then
+  ./bin/setup-github-ssh-key
+fi
+
+
+echo ""
+echo "You are all done. Please go through xxx to read the documentation."
+echo "There is also a Youtube video at xxxx"

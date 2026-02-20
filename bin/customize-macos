@@ -93,18 +93,28 @@ set_computer_name() {
   current_lhn="$(scutil --get LocalHostName 2>/dev/null || echo "")"
 
   echo ""
-  echo "Computer name settings are user-specific."
-  echo "Current:"
+  echo "Found existing computer settings:"
   echo "  ComputerName : ${current_cn:-<not set>}"
   echo "  HostName     : ${current_hn:-<not set>}"
   echo "  LocalHostName: ${current_lhn:-<not set>}"
   echo ""
 
-  printf "Enter the computer name (just hit enter to skip setting up computer name): "
+  printf "Hit Enter to keep these settings. Press c to change."
+  read -r answer
+
+  case "$answer" in
+    c|C) ;;
+    *)
+      echo "↩ Skipped computer name changes."
+      return 0
+      ;;
+  esac
+
+  printf "Enter new computer name: "
   read -r new_name
 
   if [ -z "$new_name" ]; then
-    echo "↩ Skipped computer name changes."
+    echo "↩ No name entered. Skipped computer name changes."
     return 0
   fi
 
@@ -130,32 +140,4 @@ set_computer_name() {
   esac
 }
 
-# VS Code settings
-VSCODE_SETTINGS="$HOME/Library/Application Support/Code/User/settings.json"
-if [ -f "$VSCODE_SETTINGS" ]; then
-  python3 -c "
-import json, sys
-with open(sys.argv[1]) as f:
-    data = json.load(f)
-data['files.autoSave'] = 'afterDelay'
-data['files.autoSaveDelay'] = 1000
-with open(sys.argv[1], 'w') as f:
-    json.dump(data, f, indent=2)
-" "$VSCODE_SETTINGS"
-  echo "✓ VS Code settings updated"
-else
-  mkdir -p "$(dirname "$VSCODE_SETTINGS")"
-  cat > "$VSCODE_SETTINGS" << 'EOF'
-{
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 1000
-}
-EOF
-  echo "✓ VS Code settings.json created"
-fi
-
 set_computer_name
-
-echo ""
-echo "You are all set!"
-echo ""

@@ -86,7 +86,7 @@ if File.file?(LOCAL_FILE)
   puts "  Your email in GitHub  = #{def_email.empty? ? '<not set>' : def_email}"
   puts
 
-  unless change?("Hit Enter to keep these settings, or press c to change: ")
+  unless change?("Hit Enter to keep these settings. Press c to change.")
     puts "↩ Skipped writing #{LOCAL_FILE}"
     exit 0
   end

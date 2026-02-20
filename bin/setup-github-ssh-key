@@ -113,11 +113,12 @@ end
 
 puts ""
 puts "To add your SSH key to GitHub:"
-puts "  1. Go to GitHub.com -> Settings -> SSH and GPG keys"
-puts "  2. Click 'New SSH key'"
-puts "  3. Set Title to: laptop"
-puts "  4. Paste the public key into the Key field. Public key is already in your clipboard. If it's not then copy it from the above line."
-puts "  5. Click 'Add SSH key'"
+puts "  1. Go to GitHub.com -> Settings by visiting https://github.com/settings/profile"
+puts "  1. Click 'SSH and GPG keys'"
+puts "  3. Click 'New SSH key'"
+puts "  4. Set Title to: laptop"
+puts "  5. Paste the public key into the Key field. Public key is already in your clipboard. If it's not then copy it from the above line."
+puts "  6. Click 'Add SSH key'"
 puts ""
 puts "Waiting for you to finish the steps above."
 nil until (print "Press D when done: "; STDIN.gets&.strip&.downcase == "d")
