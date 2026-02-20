@@ -7,8 +7,8 @@ A simple dotfile that gives sensible defaults, is fast and looks beautiful out o
 ```
 mkdir -p ~/code/devbox
 cd ~/code/devbox
-git clone https://github.com/neerajsingh0101/dotfiles.git
-cd dotfiles
+git clone https://github.com/neerajsingh0101/laptop.git
+cd laptop
 ```
 
 * Before executing the next command, please note that the next command will back up your existing `~/.zshrc` file as `.zshrc-bkp-YYYYMMDDSSSS`. So
