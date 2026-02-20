@@ -18,19 +18,19 @@ cd laptop
 
 # Wezterm as the terminal emulator
 * Open [wezterm](https://wezterm.org/) instead of opening terminal or iterm application. Some of you might be using [ghostyy](https://ghostty.org/) or [warp](https://www.warp.dev/). Still I'll say that you should give wezterm a try for a few days.
-* Shift + Ctrl governs wezterm configuration.
-* Shift + Ctrl + i -> split in two left hand side and right hand side
-* Shift + Ctrl + u -> split in two top side and bottom side
-* Shift + Ctrl + h -> navigate to left pane
-* Shift + Ctrl + l -> navigate to right pane
-* Shift + Ctrl + j -> navigate to the bottom pane
-* Shift + Ctrl + k -> navigate to the top pane
-* Shift + Ctrl + w -> Quit the pane
-* Shift + Ctrl + up arrow -> resize the pane and move up
-* Shift + Ctrl + down arrow -> resize the pane and move down
-* Shift + Ctrl + left arrow -> resize the pane and move left
-* Shift + Ctrl + right arrow -> resize the pane and move right
-* By default the tab name is the name of the running process. Press Shift + Ctrl + r to rename the tab.
+* Shift + Opt governs wezterm configuration.
+* Shift + Opt + i -> split in left hand side and right hand side
+* Shift + Opt + u -> split in top side and bottom side
+* Shift + Opt + h -> navigate to left pane
+* Shift + Opt + l -> navigate to right pane
+* Shift + Opt + j -> navigate to the bottom pane
+* Shift + Opt + k -> navigate to the top pane
+* Shift + Opt + w -> Quit the pane
+* Shift + Opt + up arrow -> resize the pane and move up
+* Shift + Opt + down arrow -> resize the pane and move down
+* Shift + Opt + left arrow -> resize the pane and move left
+* Shift + Opt + right arrow -> resize the pane and move right
+* By default the tab name is the name of the running process. Press Shift + Opt + r to rename the tab.
 
 # z command
 `z` is a smarter `cd` command. It comes from [zoxide](https://github.com/ajeetdsouza/zoxide).

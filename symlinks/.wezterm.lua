@@ -43,87 +43,78 @@ local pane_resize_keys = {
 }
 
 -- Local override by trying to load wezterm_local.lua
-local ok, local_overrides = pcall(require, "wezterm_local")
-if ok and type(local_overrides) == "table" and type(local_overrides.pane_resize_keys) == "table" then
-  pane_resize_keys.left  = local_overrides.pane_resize_keys.left  or pane_resize_keys.left
-  pane_resize_keys.right = local_overrides.pane_resize_keys.right or pane_resize_keys.right
-end
+-- local ok, local_overrides = pcall(require, "wezterm_local")
+-- if ok and type(local_overrides) == "table" and type(local_overrides.pane_resize_keys) == "table" then
+--   pane_resize_keys.left  = local_overrides.pane_resize_keys.left  or pane_resize_keys.left
+--   pane_resize_keys.right = local_overrides.pane_resize_keys.right or pane_resize_keys.right
+-- end
 
 -- Key bindings for splitting panes
 config.keys = {
   -- Split (left/right)
   {
     key = 'i',
-    mods = 'SHIFT|CTRL',
+    mods = 'SHIFT|OPT',
     action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
   },
   -- Split (top/bottom)
   {
     key = 'u',
-    mods = 'SHIFT|CTRL',
+    mods = 'SHIFT|OPT',
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
   },
-  -- Navigate between panes with Shift+Ctrl keys
+  -- Navigate between panes with Shift+Opt keys
   {
     key = 'h',
-    mods = 'SHIFT|CTRL',
+    mods = 'SHIFT|OPT',
     action = wezterm.action.ActivatePaneDirection 'Left',
   },
   {
     key = 'l',
-    mods = 'SHIFT|CTRL',
+    mods = 'SHIFT|OPT',
     action = wezterm.action.ActivatePaneDirection 'Right',
   },
   {
     key = 'k',
-    mods = 'SHIFT|CTRL',
+    mods = 'SHIFT|OPT',
     action = wezterm.action.ActivatePaneDirection 'Up',
   },
   {
     key = 'j',
-    mods = 'SHIFT|CTRL',
+    mods = 'SHIFT|OPT',
     action = wezterm.action.ActivatePaneDirection 'Down',
   },
   -- Close current pane
   {
     key = 'w',
-    mods = 'SHIFT|CTRL',
+    mods = 'SHIFT|OPT',
     action = wezterm.action.CloseCurrentPane { confirm = true },
-  },
-  -- Command K to clear the console
-  {
-    key = 'k',
-    mods = 'CMD',
-    action = wezterm.action.Multiple({
-        wezterm.action.ClearScrollback("ScrollbackAndViewport"),
-        wezterm.action.SendKey({ key = "L", mods = "CTRL" }), -- optional: like "clear"
-    }),
   },
   -- Resize panes
   {
     key = pane_resize_keys.left,
-    mods = 'SHIFT|CTRL',
+    mods = 'SHIFT|OPT',
     action = wezterm.action.AdjustPaneSize { 'Left', 5 },
   },
   {
     key = pane_resize_keys.right,
-    mods = 'SHIFT|CTRL',
+    mods = 'SHIFT|OPT',
     action = wezterm.action.AdjustPaneSize { 'Right', 5 },
   },
   {
     key = 'UpArrow',
-    mods = 'SHIFT|CTRL',
+    mods = 'SHIFT|OPT',
     action = wezterm.action.AdjustPaneSize { 'Up', 5 },
   },
   {
     key = 'DownArrow',
-    mods = 'SHIFT|CTRL',
+    mods = 'SHIFT|OPT',
     action = wezterm.action.AdjustPaneSize { 'Down', 5 },
   },
   -- Rename tab
   {
     key = 'r',
-    mods = 'SHIFT|CTRL',
+    mods = 'SHIFT|OPT',
     action = wezterm.action.PromptInputLine {
       description = 'Enter new tab name',
       action = wezterm.action_callback(function(window, pane, line)
