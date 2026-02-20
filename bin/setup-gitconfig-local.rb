@@ -62,12 +62,12 @@ def prompt_with_default(label, default_value, required: true, validate: nil)
   end
 end
 
-def yes?(prompt)
+def change?(prompt)
   print prompt
   ans = STDIN.gets
   exit 1 if ans.nil?
 
-  %w[y yes].include?(ans.strip.downcase)
+  %w[c change].include?(ans.strip.downcase)
 end
 
 unless git_installed?
@@ -86,7 +86,7 @@ if File.file?(LOCAL_FILE)
   puts "  Your email in GitHub  = #{def_email.empty? ? '<not set>' : def_email}"
   puts
 
-  unless yes?("Overwrite #{LOCAL_FILE}? [y/n] ")
+  unless change?("Hit Enter to keep these settings, or press c to change: ")
     puts "↩ Skipped writing #{LOCAL_FILE}"
     exit 0
   end

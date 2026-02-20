@@ -17,7 +17,7 @@ Follow the instructions mentioned at [README](https://github.com/neerajsingh0101
 
 # Setup SSH key in GitHub
 
-Execute `./bin/setup_github_ssh_key`.
+Execute `./bin/setup-github-ssh-key`.
 
 # Setup laptop
 

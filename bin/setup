@@ -119,8 +119,11 @@ cask_install meetingbar
 ruby ./bin/setup-gitconfig-local.rb
 
 echo ""
-read -p "Would you like to reset Raycast settings and apply the ones provided by Neeto? If you have not customized your Raycast yet, answer yes. Hit Enter or press n to leave your raycast settings as it is. " answer
-if [[ "$answer" =~ ^[Yy](es)?$ ]]; then
+echo "Would you like to reset Raycast settings and apply"
+echo "the ones provided by Neeto?"
+echo "If you have not customized your Raycast yet then you should hit \"c\"."
+read -p "Hit Enter to keep current settings, or press c to change: " answer
+if [[ "$answer" =~ ^[Cc](hange)?$ ]]; then
   ./bin/fetch-latest-raycast-export
 
   echo ""
@@ -139,7 +142,6 @@ if [[ "$answer" =~ ^[Yy](es)?$ ]]; then
   done
 fi
 
-echo ""
-echo "Next: apply macOS defaults by running:"
-echo "  ./bin/customize-macos"
-echo ""
+echo "Applying customize macos"
+./bin/customize-macos
+

@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-# setup_github_ssh_key
+# setup-github-ssh-key
 #
 # Usage:
-#   setup_github_ssh_key you@example.com
-#   setup_github_ssh_key
+#   setup-github-ssh-key you@example.com
+#   setup-github-ssh-key
 #
 # What it does:
 # - Generates an Ed25519 SSH key at ~/.ssh/id_ed25519 (refuses to overwrite)
