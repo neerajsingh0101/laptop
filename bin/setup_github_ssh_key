@@ -16,12 +16,29 @@
 require "fileutils"
 require "open3"
 
+# Ruby equivalent of the bash fancy_echo function.
+# Usage:
+#   fancy_echo("Installing %s ...", "Homebrew")
+#   fancy_echo("Hello world")
+
+def fancy_puts(fmt, *args)
+  # Matches: printf "\n$fmt\n" "$@"
+  # - Adds a leading and trailing newline
+  # - Uses printf-style formatting when args are provided
+  print("\n")
+  print("\e[31m")
+  printf(fmt, *args)
+  print("\e[0m")
+  print("\n")
+  $stdout.flush
+end
+
 def command_exists?(cmd)
   system("command -v #{cmd} >/dev/null 2>&1")
 end
 
 def run!(cmd)
-  puts "› #{cmd}"
+  fancy_puts "› #{cmd}"
   success = system(cmd)
   raise "Command failed: #{cmd}" unless success
 end
@@ -34,7 +51,7 @@ end
 
 email = ARGV[0].to_s.strip
 if email.empty?
-  print "Enter the email to tag this SSH key with: "
+  print "Enter your GitHub email: "
   email = STDIN.gets.to_s.strip
 end
 
@@ -59,17 +76,12 @@ if File.exist?(key_path) || File.exist?(pub_path)
   exit 1
 end
 
-puts ""
-puts ""
-puts "===================================="
-puts "======= Generating SSH key ======="
-puts "Just hit enter when you are asked to enter passphrase."
+fancy_puts "Just hit enter when you are asked 'Enter passphrase for'."
+fancy_puts "Just hit enter again when you are asked 'Enter same passphrase again'."
 run!(%(ssh-keygen -t ed25519 -C "#{email}" -f "#{key_path}"))
 
-puts
-puts "== Starting ssh-agent =="
 agent_output = capture!("ssh-agent -s")
-puts agent_output
+fancy_puts agent_output
 
 # Export SSH_AUTH_SOCK / SSH_AGENT_PID into this Ruby process environment
 agent_output.lines.each do |line|
@@ -85,12 +97,10 @@ if ENV["SSH_AUTH_SOCK"].to_s.empty?
   warn "  ssh-add --apple-use-keychain ~/.ssh/id_ed25519"
 end
 
-puts "== Adding key to ssh-agent =="
 added = system(%(ssh-add --apple-use-keychain "#{key_path}" 2>/dev/null))
 added ||= system(%(ssh-add "#{key_path}"))
 raise "Failed to add SSH key to ssh-agent." unless added
 
-puts "===================================="
 puts "====== Public key       ============"
 pub_key = File.read(pub_path)
 puts pub_key
@@ -98,21 +108,21 @@ puts pub_key
 if command_exists?("pbcopy")
   IO.popen("pbcopy", "w") { |io| io.write(pub_key) }
 else
-  puts "pbcopy not found; copy the key above manually."
+  fancy_puts "pbcopy not found; copy the key above manually."
 end
 
-puts
-puts "===================================="
-puts "====== Add ssh keys to GitHub ======"
-puts "Please note that public key is already copied to your clipboard."
-puts "If public key is not copied to clipboard for any reason then you can copy it from above."
-puts "Visit Github.com in your browser and follow the instructions mentioned below."
-puts "GitHub-> Settings -> SSH and GPG keys -> New SSH key"
-puts 'Paste the key, name it (e.g. "MacBook"), and save.'
+puts ""
+puts "To add your SSH key to GitHub:"
+puts "  1. Go to GitHub.com -> Settings -> SSH and GPG keys"
+puts "  2. Click 'New SSH key'"
+puts "  3. Set Title to: laptop"
+puts "  4. Paste the public key into the Key field. Public key is already in your clipboard. If it's not then copy it from the above line."
+puts "  5. Click 'Add SSH key'"
+puts ""
+puts "Waiting for you to finish the steps above."
+nil until (print "Press D when done: "; STDIN.gets&.strip&.downcase == "d")
 
-puts
-puts "=========================================="
-puts "======= Test if SSH keys are working ====="
+fancy_puts "Now let's test if SSH keys are working."
 puts "ssh -T git@github.com"
-puts "(First time it will ask to trust GitHub's host key -- type 'yes'.)"
-puts "You should see a message which says 'You've successfully authenticated`. If you see this message means you are all set."
+fancy_puts "(First time it will ask to trust GitHub's host key -- type 'yes'.)"
+fancy_puts "You should see a message which says 'You've successfully authenticated`. If you see this message means you are all set."

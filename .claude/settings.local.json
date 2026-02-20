@@ -13,7 +13,8 @@
       "WebFetch(domain:www.dropbox.com)",
       "Bash(curl:*)",
       "Bash(/Users/neerajsingh/code/laptop/dotfiles/bin/fetch-latest-raycast-export:*)",
-      "Bash(bash -n /Users/neerajsingh/code/laptop/dotfiles/bin/install)"
+      "Bash(bash -n /Users/neerajsingh/code/laptop/dotfiles/bin/install)",
+      "Bash(ssh:*)"
     ]
   }
 }
