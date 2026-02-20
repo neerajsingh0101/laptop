@@ -58,11 +58,10 @@ fi
 
 ruby ./bin/update-gitconfig-local.rb
 
-# Check if Homebrew is installed
+# Install Homebrew if not already installed
 if ! command -v brew &> /dev/null; then
-  echo "Error: Homebrew is not installed." >&2
-  echo "Please install Homebrew. Visit https://brew.sh to see instructions." >&2
-  exit 1
+  echo "Homebrew not found. Installing..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Make sure we're using the latest Homebrew.
@@ -114,10 +113,10 @@ cask_install wezterm
 cask_install meetingbar
 
 # Install Claude Code
-curl -fsSL https://claude.ai/install.sh | sh
+/bin/bash -c "$(curl -fsSL https://claude.ai/install.sh)"
 
 # Install tunnelto
-curl -sL https://tunnelto.dev/install.sh | sh
+/bin/bash -c "$(curl -fsSL https://tunnelto.dev/install.sh)"
 
 echo ""
 echo "Next: apply macOS defaults by running:"
