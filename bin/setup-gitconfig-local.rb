@@ -7,6 +7,7 @@
 #
 # Your ~/.gitconfig need to have following line for this to
 # work. ./bin/install takes care of all this.
+#
 #   [include]
 #     path = ~/.gitconfig.local
 
