@@ -180,3 +180,13 @@ export PATH="$TUNNELTO_INSTALL/bin:$PATH"
 
 # Activate mise last so it can manage tool versions per-directory cleanly
 eval "$(mise activate zsh)"
+
+DOTFILESD="$DEVBOXD/dotfiles"
+
+# Put any overriding things in personal dotfiles. Personal dotfiles
+# should be sibling to laptop repo and it should have a file calle
+# .zshrc. This will always be loaded at the very end so ti can override
+# anything in the .zshrc of laptop.
+if [ -d "$DOTFILESD" ] && [ -f "$DOTFILESD/.zshrc" ]; then
+  source "$DOTFILESD/.zshrc"
+fi
