@@ -1,10 +1,12 @@
-# Load dotfiles.env
-[ -f "$HOME/.dotfiles.env" ] && source "$HOME/.dotfiles.env"
+# Load .devbox
+[ -f "$HOME/.devbox" ] && source "$HOME/.devbox"
 
-# Put private environment variables in ~/.dotfiles.local. It means they'll stay out
-# of main dotfiles repository (which may be public, like this one), but
+# Put private environment variables in ~/.devbox.local. It means they'll stay out
+# of main repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
-[[ -f ~/.dotfiles.local ]] && source ~/.dotfiles.local
+[[ -f ~/.devbox.local ]] && source ~/.devbox.local
+
+LAPTOPD="$DEVBOXD/laptop"
 
 # if condition is checking if homebrew is installed or not
 # `brew shellenv` prints a bunch of shell commands like export PATH=..., export HOMEBREW_PREFIX=..., etc.
@@ -54,7 +56,7 @@ ZSH_SYNTAX_HIGHLIGHTING="$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-synt
 
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
-source "$DOTFILESD/zsh/prompt.zshrc"
+source "$LAPTOPD/zsh/prompt.zshrc"
 
 ##### ALIASES #####
 alias reload!='. ~/.zshrc'
@@ -112,10 +114,10 @@ alias h='history'
 
 alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 x.com
 
-alias dotfiles="code $DOTFILESD" # open dotfiles
+alias laptop="code $LAPTOPD" # open laptop code
 
-# take me to the dotfiles directory
-alias dotfilesd="cd $DOTFILESD" # go to dotfiles directory
+# take me to the laptop directory
+alias laptopd="cd $LAPTOPD" # go to laptopd directory
 
 # neeto repos
 alias neetozone="cd ~/code/neetozone"
@@ -165,7 +167,7 @@ autoload -Uz compinit
 compinit -C
 
 # Put your personal bins early
-export PATH="$DOTFILESD/bin:$DOTFILESD/utils:$HOME/.local/bin:$PATH"
+export PATH="$LAPTOPD/bin:$LAPTOPD/utils:$HOME/.local/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
 

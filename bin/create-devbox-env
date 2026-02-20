@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+#
+# This is invoked by ./bin/setup
+# This creates ~/.devbox.env and sets DEVBOXD to the user's devbox directory.
+#
+require "fileutils"
+
+home = Dir.home
+target = File.dirname(Dir.pwd)
+devboxd_value = target.start_with?(home) ? target.sub(/\A#{Regexp.escape(home)}/, "$HOME") : target
+file  = File.join(home, ".devbox")
+content = %(export DEVBOXD="#{devboxd_value}"\n)
+
+File.write(file, content)

@@ -5,16 +5,18 @@
 # It does not always trigger in every context.
 # * If the `if` condition fails then it won't exit.
 # * might_fail || echo "handled"    # won’t exit because `||` handles it
-set -e
+set -eE
+trap 'echo "Error on line $LINENO (exit code $?)" >&2' ERR
 
-# Update DOTFILESD based on where setup is being run from
-./bin/create-dotfiles-env
+# Update DEVBOXD based on where setup is being run from
+./bin/create-devbox-env
 
-# Load dotfiles.env (source local file since $HOME symlink may not exist yet)
-[ -f "./zsh/dotfiles.env" ] && source "./zsh/dotfiles.env"
+# Load .devbox.env (source local file since $HOME symlink may not exist yet)
+[ -f "./zsh/.devbox" ] && source "./zsh/.devbox"
+LAPTOPD="$DEVBOXD/laptop"
 
 # Remove destination (file/symlink/dir) and recreate symlink
-# If dst is a real file (not a symlink), back it up first
+# If destination is a real file (not a symlink), back it up first
 link_force() {
   src="$1"
   dst="$2"
@@ -41,19 +43,19 @@ link_force() {
   ln -s -- "$src" "$dst"
 }
 
-link_force "$DOTFILESD/zsh/zshrc"          "$HOME/.zshrc"
-link_force "$DOTFILESD/zsh/dotfiles.env"   "$HOME/.dotfiles.env"
+link_force "$LAPTOPD/zsh/zshrc"          "$HOME/.zshrc"
+link_force "$LAPTOPD/zsh/.devbox"         "$HOME/.devbox"
 
-link_force "$DOTFILESD/symlinks/.gemrc"    "$HOME/.gemrc"
-link_force "$DOTFILESD/symlinks/.gitconfig" "$HOME/.gitconfig"
-link_force "$DOTFILESD/symlinks/.gitignore" "$HOME/.gitignore"
-link_force "$DOTFILESD/symlinks/.irbrc"    "$HOME/.irbrc"
-link_force "$DOTFILESD/symlinks/.psqlrc"   "$HOME/.psqlrc"
-link_force "$DOTFILESD/symlinks/.wezterm.lua"   "$HOME/.wezterm.lua"
+link_force "$LAPTOPD/symlinks/.gemrc"    "$HOME/.gemrc"
+link_force "$LAPTOPD/symlinks/.gitconfig" "$HOME/.gitconfig"
+link_force "$LAPTOPD/symlinks/.gitignore" "$HOME/.gitignore"
+link_force "$LAPTOPD/symlinks/.irbrc"    "$HOME/.irbrc"
+link_force "$LAPTOPD/symlinks/.psqlrc"   "$HOME/.psqlrc"
+link_force "$LAPTOPD/symlinks/.wezterm.lua"   "$HOME/.wezterm.lua"
 
-if [ -f "$DOTFILESD/symlinks/wezterm_local.lua" ]; then
+if [ -f "$LAPTOPD/symlinks/wezterm_local.lua" ]; then
   mkdir -p "$HOME/.config/wezterm"
-  link_force "$DOTFILESD/symlinks/wezterm_local.lua"   "$HOME/.config/wezterm/wezterm_local.lua"
+  link_force "$LAPTOPD/symlinks/wezterm_local.lua"   "$HOME/.config/wezterm/wezterm_local.lua"
 fi
 
 
@@ -147,15 +149,13 @@ echo "Applying customize Macos"
 echo "You will be asked to provide your laptop password"
 ./bin/customize-macos
 
-
 echo ""
 echo "Would you like to set up a GitHub SSH key?"
-echo "If you already have one configured, just hit Enter to skip."
-read -p "Hit Enter to skip, or press c to set up your SSH key: " answer
+echo "If you already have one configured, then you can skip."
+read -p "Hit Enter to skip. Press c to set up your SSH key. " answer
 if [[ "$answer" =~ ^[Cc](hange)?$ ]]; then
   ./bin/setup-github-ssh-key
 fi
-
 
 echo ""
 echo "You are all done. Please go through xxx to read the documentation."
