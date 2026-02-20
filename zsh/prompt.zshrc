@@ -25,7 +25,9 @@ __git_prompt_info() {
   print -r -- " %{$fg[cyan]%}(${branch}${dirty})%{$reset_color%}"
 }
 
+# Blank line before every prompt
+precmd() { print }
+
 # Icon + full pwd + git info + newline + prompt char
-PROMPT='
-%{$fg[magenta]%}❯%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%}$(__git_prompt_info)
+PROMPT='%{$fg[magenta]%}❯%{$reset_color%} %{$fg[blue]%}%~%{$reset_color%}$(__git_prompt_info)
 %{$fg[magenta]%}›%{$reset_color%} '
