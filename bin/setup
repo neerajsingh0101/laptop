@@ -7,13 +7,11 @@
 # * might_fail || echo "handled"    # won’t exit because `||` handles it
 set -e
 
-# Update DOTFILESD based on where install.sh is being run from
+# Update DOTFILESD based on where setup is being run from
 ./bin/create-dotfiles-env
 
 # Load dotfiles.env (source local file since $HOME symlink may not exist yet)
 [ -f "./zsh/dotfiles.env" ] && source "./zsh/dotfiles.env"
-
-
 
 # Remove destination (file/symlink/dir) and recreate symlink
 # If dst is a real file (not a symlink), back it up first
@@ -121,8 +119,8 @@ cask_install meetingbar
 ruby ./bin/setup-gitconfig-local.rb
 
 echo ""
-read -p "Would you like to reset Raycast settings and apply the ones provided by Neeto? (If you have not customized your Raycast yet, answer yes) [y/N] " answer
-if [[ "$answer" =~ ^[Yy]$ ]]; then
+read -p "Would you like to reset Raycast settings and apply the ones provided by Neeto? If you have not customized your Raycast yet, answer yes. Hit Enter or press n to leave your raycast settings as it is. " answer
+if [[ "$answer" =~ ^[Yy](es)?$ ]]; then
   ./bin/fetch-latest-raycast-export
 
   echo ""

@@ -6,7 +6,7 @@
 # - Writes them to ~/.gitconfig.local
 #
 # Your ~/.gitconfig need to have following line for this to
-# work. ./bin/install takes care of all this.
+# work. ./bin/setup takes care of all this.
 #
 #   [include]
 #     path = ~/.gitconfig.local

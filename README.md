@@ -13,8 +13,8 @@ cd dotfiles
 
 * Before executing the next command, please note that the next command will back up your existing `~/.zshrc` file as `.zshrc-bkp-YYYYMMDDSSSS`. So
   If you don't want to use the dotfiles, you can revert to the backed-up `.zshrc` file.
-* Execute `./bin/install`.
-* You can run `./bin/install` any number of times.
+* Execute `./bin/setup`.
+* You can run `./bin/setup` any number of times.
 
 # Wezterm as the terminal emulator
 * Open [wezterm](https://wezterm.org/) instead of opening terminal or iterm application. Some of you might be using [ghostyy](https://ghostty.org/) or [warp](https://www.warp.dev/). Still I'll say that you should give wezterm a try for a few days.

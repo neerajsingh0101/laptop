@@ -122,7 +122,7 @@ else
       Run: brew install openssl@3"
 fi
 
-# ── 6. Key formulae from bin/install are present ────────────────────────
+# ── 6. Key formulae from bin/setup are present ────────────────────────
 echo ""
 echo "==> Checking key formulae..."
 echo ""
