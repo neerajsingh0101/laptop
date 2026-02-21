@@ -89,6 +89,7 @@ brew install aicommits
 brew install postgresql@18
 brew install redis
 brew install font-hack-nerd-font
+brew install elasticsearch
 
 
 # try install; if it fails due to an existing app, adopt; if adopt fails, force.

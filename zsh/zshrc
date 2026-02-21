@@ -118,6 +118,7 @@ alias laptop="code $LAPTOPD" # open laptop code
 
 # take me to the laptop directory
 alias laptopd="cd $LAPTOPD" # go to laptopd directory
+alias dotfilesd="cd $DEVBOXD/dotfiles" # go to dotfiles directory
 
 # neeto repos
 alias neetozone="cd ~/code/neetozone"
