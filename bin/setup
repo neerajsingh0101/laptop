@@ -131,7 +131,7 @@ if [[ "$answer" =~ ^[Cc](hange)?$ ]]; then
   echo ""
   echo "To import Raycast settings:"
   echo "  1. Open Raycast"
-  echo "  2. Press Cmd + , to open Settings"
+  echo "  2. Press Cmd and comma(,) to open Settings"
   echo "  3. Click on the 'Advanced' tab"
   echo "  4. Scroll to 'Import & Export'"
   echo "  5. Click 'Import'"
