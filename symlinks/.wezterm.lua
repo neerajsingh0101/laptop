@@ -111,6 +111,12 @@ config.keys = {
     mods = 'SHIFT|OPT',
     action = wezterm.action.AdjustPaneSize { 'Down', 5 },
   },
+  -- Clear terminal (Cmd+K)
+  {
+    key = 'k',
+    mods = 'SUPER',
+    action = wezterm.action.ClearScrollback 'ScrollbackAndViewport',
+  },
   -- Rename tab
   {
     key = 'r',
