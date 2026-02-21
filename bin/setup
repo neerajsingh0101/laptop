@@ -89,7 +89,10 @@ brew install aicommits
 brew install postgresql@18
 brew install redis
 brew install font-hack-nerd-font
-brew install elasticsearch
+brew install openjdk@17
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+brew tap elastic/tap
+brew install elastic/tap/elasticsearch-full
 
 
 # try install; if it fails due to an existing app, adopt; if adopt fails, force.
