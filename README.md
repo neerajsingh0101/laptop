@@ -18,6 +18,18 @@ You can run `./bin/setup` any number of times and it won't have any adverse effe
 
 # Overriding the dotfiles and other things create by laptop
 
+At the very top of `~/.zshrc` the scripts looks for file `~/.devbox.local`. If this file
+is present then it's loaded. This is a good place to put private Environment varibles
+etc which should not be checked in.
+
+At the every end of the `~/.zshrc` the script looks for folder `dotfiles` as a sibling to
+`laptops` directory. For example if the path to `laptop` directory is `~/work/devbox/laptop`
+then dotfiles is expected at `~/work/devbox/dotfiles`. If `dotfiles` directory is present
+and if this direcotry has a file named `.zshrc` then that `.zshrc` is loaded.
+
+Since this `.zshrc` is loaded at the very end you can override anything you want from the values
+set by dotfiles created by laptop.
+
 # Wezterm as the terminal emulator
 
 * Open [wezterm](https://wezterm.org/) instead of opening terminal or iterm application.
