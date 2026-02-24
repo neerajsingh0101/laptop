@@ -171,6 +171,10 @@ DOTFILESD="$DEVBOXD/dotfiles"
 # then setup a directory called "dotfiles" as a sibling to the "laptop"
 # directory. This directory shoudl have a file called "setup". This
 # "setup" file should be executable.
+#
+# See https://github.com/neerajsingh0101/dotfiles/blob/main/setup
+# as a real world example.
+#
 if [ -d "$DOTFILESD" ] && [ -f "$DOTFILESD/setup" ]; then
   "$DOTFILESD/setup"
 fi

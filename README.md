@@ -18,6 +18,12 @@ You can run `./bin/setup` any number of times and it won't have any adverse effe
 
 # Overriding the dotfiles and other things create by laptop
 
+At the end of `./bin/setup` there is a provision to execute a custom script file.
+Create a directory called `dotfiles` as a sibling to the `laptop` directory. This
+directoty should have a file called `setup` and it should be executable. At the
+end of the `./bin/setup` the `setup` of the "dotfiles" is executed. You can see
+https://github.com/neerajsingh0101/dotfiles/blob/main/setup as a real world example.
+
 At the very top of `~/.zshrc` the scripts looks for file `~/.devbox-zshrc.local`. If this file
 is present then it's loaded. This is a good place to put private Environment varibles
 etc which should not be checked in.
