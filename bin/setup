@@ -85,6 +85,7 @@ brew install yarn
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 brew install mise
+brew install curl # curl that comes with Mac is highly outdated
 brew install aicommits
 brew install postgresql@18
 brew install redis

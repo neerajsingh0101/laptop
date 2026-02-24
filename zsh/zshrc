@@ -179,6 +179,9 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export TUNNELTO_INSTALL="$HOME/.tunnelto"
 export PATH="$TUNNELTO_INSTALL/bin:$PATH"
 
+# Add installed curl to path
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+
 # Activate mise last so it can manage tool versions per-directory cleanly
 eval "$(mise activate zsh)"
 
@@ -191,3 +194,4 @@ DOTFILESD="$DEVBOXD/dotfiles"
 if [ -d "$DOTFILESD" ] && [ -f "$DOTFILESD/.zshrc" ]; then
   source "$DOTFILESD/.zshrc"
 fi
+
