@@ -1,10 +1,10 @@
 # Load .devbox
 [ -f "$HOME/.devbox" ] && source "$HOME/.devbox"
 
-# Put private environment variables in ~/.devbox.local. It means they'll stay out
+# Put private environment variables in ~/.devbox-zshrc.local. It means they'll stay out
 # of main repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
-[[ -f ~/.devbox.local ]] && source ~/.devbox.local
+[[ -f ~/.devbox-zshrc.local ]] && source ~/.devbox-zshrc.local
 
 LAPTOPD="$DEVBOXD/laptop"
 

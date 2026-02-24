@@ -18,7 +18,7 @@ You can run `./bin/setup` any number of times and it won't have any adverse effe
 
 # Overriding the dotfiles and other things create by laptop
 
-At the very top of `~/.zshrc` the scripts looks for file `~/.devbox.local`. If this file
+At the very top of `~/.zshrc` the scripts looks for file `~/.devbox-zshrc.local`. If this file
 is present then it's loaded. This is a good place to put private Environment varibles
 etc which should not be checked in.
 
