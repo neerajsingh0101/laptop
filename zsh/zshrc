@@ -70,7 +70,7 @@ alias gco='git checkout'
 alias glg='git lg'
 alias glg2='git lg2'
 alias gwip='git add . && git commit -m "wip"'
-alias aic="aicommits --yes && gps"
+alias aic="aicommits --yes"
 
 # git root
 gr() {
