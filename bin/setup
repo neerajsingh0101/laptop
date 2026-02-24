@@ -162,5 +162,13 @@ if [[ "$answer" =~ ^[Cc](hange)?$ ]]; then
 fi
 
 echo ""
-echo "You are all done. Please go through xxx to read the documentation."
-echo "There is also a Youtube video at xxxx"
+echo "You are all done."
+echo "The README at https://github.com/neerajsingh0101/laptop has more information about "
+
+# If you want your custom script to be executed as part of the setup
+# then setup a directory called "dotfiles" as a sibling to the "laptop"
+# directory. This directory shoudl have a file called "setup". This
+# "setup" file should be executable.
+if [ -d "$DOTFILESD" ] && [ -f "$DOTFILESD/setup" ]; then
+  "$DOTFILESD/setup"
+fi
