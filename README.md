@@ -48,23 +48,29 @@ set by dotfiles created by laptop.
 * By default the tab name is the name of the running process. Press Shift + Option + r to rename the tab.
 
 # z command
+
 `z` is a smarter `cd` command. It comes from [zoxide](https://github.com/ajeetdsouza/zoxide).
 https://neerajsingh0909.neetorecord.com/watch/c75ffff803ac46963f7d
 
 # Atuin for better shell history
+
 https://neerajsingh0909.neetorecord.com/watch/446ad749cd466d5db54b
 
 # Listing things
+
 `ls`,`ll`, `la` https://neerajsingh0909.neetorecord.com/watch/dd8d9bba322b10a3e9b4
 
 # fkill
+
 https://neerajsingh0909.neetorecord.com/watch/d958a719c843d692e732
 
 # Git usage
-`gs`, `gap`, `gp`, `gpl`, `gcm`, `gr`
+
+`gs`, `gap`, `gps`, `gpl`, `gcm`, `gr`
 
 # sysinfo
-* `sysinfo` lists info about your laptop.
+
+`sysinfo` lists info about your laptop.
 
 
 # Mac applications
@@ -113,6 +119,7 @@ If you want to get to Slack app then you don't have to cycle through all open ap
 * Ctrl + z -> Wezterm
 * Ctrl + n -> Apple notes
 * Ctrl + o -> Obsidian
+* Ctrl + m -> maximize window
 
 ### Resizing screens
 
@@ -128,19 +135,16 @@ then you would be flying through your windows magically. Here are general settin
 * k -> go up
 * l -> go right
 
-These keys combined with Ctrl makes your screen move. Open Apple notes and hit `Ctrl + h`. See what happens.
+These keys combined with Ctrl + Options makes your screen move. Open Apple notes and hit `Ctrl + h`. See what happens.
 
-* Ctrl + h -> take left half of the vertical screen
-* Ctrl + j -> take bottom half of the horizontal screen
-* Ctrl + k -> take top half of the vertical screen
-* Ctrl + l -> take the right half of the vertical screen
+* Ctrl + Options + h -> take left half of the vertical screen
+* Ctrl + Options + j -> take bottom half of the horizontal screen
+* Ctrl + Options + k -> take top half of the vertical screen
+* Ctrl + Options + l -> take the right half of the vertical screen
 
-If you want to take 1/4th and not half then add Alt key.
-
-* Ctrl + Alt +  h -> take left 25% of the vertical screen
-* Ctrl + Alt + j -> take bottom 25% of the horizontal screen
-* Ctrl + Alt + k -> take top 25% of the vertical screen
-* Ctrl + Alt + l -> take the right 25% of the vertical screen
+If you hit the same option again then the screen goes from  half to 3/4th. If you hit again then it goes to
+1/4th. If you hit again then it comes back to half screen. It circles through those three options and this is
+a really nice feature.
 
 * Ctrl + m -> to maximize any application in the given monitor
 
