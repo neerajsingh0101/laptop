@@ -85,12 +85,15 @@ gr() {
 alias gpl='git pull --prune'
 
 # prefer eza
+alias ls="ls -G"
+alias ll="ls -l"
+alias la="ls -al"
+
+# here f stands for "fancy" version
 if command -v eza >/dev/null; then
-  alias ls="eza --icons=always"
-  alias ll='eza --classify=auto --color -l --icons=always'
-  alias la='eza --classify=auto --color -a -l --icons=always'
-else
-  alias ls="ls -G" # Fallback to standard macos/linux colors
+  alias lsf="eza --icons=always"
+  alias llf='eza --classify=auto --color -l --icons=always'
+  alias laf='eza --classify=auto --color -a -l --icons=always'
 fi
 
 alias cld="claude"
@@ -148,6 +151,10 @@ alias playdashw="cd ~/code/neetozone/neeto-playdash-web"
 alias codew="cd ~/code/neetozone/neeto-code-web"
 alias payw="cd ~/code/neetozone/neeto-pay-web"
 alias bugwatchw="cd ~/code/neetozone/neeto-bugwatch-web"
+
+alias start_rails="bundle exec rails server"
+alias start_vite="yarn dev --host"
+alias start_sidekiq="bundle exec sidekiq -C config/sidekiq.yml"
 
 # Away From Keyboard (AFK) - Start screen saver
 alias afk="open /System/Library/CoreServices/ScreenSaverEngine.app"
