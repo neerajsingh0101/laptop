@@ -151,6 +151,8 @@ alias playdashw="cd ~/code/neetozone/neeto-playdash-web"
 alias codew="cd ~/code/neetozone/neeto-code-web"
 alias payw="cd ~/code/neetozone/neeto-pay-web"
 alias bugwatchw="cd ~/code/neetozone/neeto-bugwatch-web"
+alias neetob="cd ~/code/neetozone/neetob"
+alias neetobd="cd ~/code/neetozone/neetob"
 
 alias start_rails="bundle exec rails server"
 alias start_vite="yarn dev --host"
