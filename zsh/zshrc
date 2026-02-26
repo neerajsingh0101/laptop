@@ -198,7 +198,9 @@ DOTFILESD="$DEVBOXD/dotfiles"
 # should be sibling to laptop repo and it should have a file calle
 # .zshrc. This will always be loaded at the very end so ti can override
 # anything in the .zshrc of laptop.
+#
+# You can see a real world example of it at
+# https://github.com/neerajsingh0101/dotfiles/blob/main/.zshrc
 if [ -d "$DOTFILESD" ] && [ -f "$DOTFILESD/.zshrc" ]; then
   source "$DOTFILESD/.zshrc"
 fi
-
