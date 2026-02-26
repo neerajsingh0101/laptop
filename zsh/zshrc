@@ -54,7 +54,6 @@ bindkey '^[[B' history-search-forward
 ZSH_AUTOSUGGESTIONS="$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 ZSH_SYNTAX_HIGHLIGHTING="$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-eval "$(atuin init zsh)"
 eval "$(zoxide init zsh)"
 source "$LAPTOPD/zsh/prompt.zshrc"
 

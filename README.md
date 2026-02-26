@@ -58,10 +58,6 @@ set by dotfiles created by laptop.
 `z` is a smarter `cd` command. It comes from [zoxide](https://github.com/ajeetdsouza/zoxide).
 https://neerajsingh0909.neetorecord.com/watch/c75ffff803ac46963f7d
 
-# Atuin for better shell history
-
-https://neerajsingh0909.neetorecord.com/watch/446ad749cd466d5db54b
-
 # Listing things
 
 `ls`,`ll`, `la` https://neerajsingh0909.neetorecord.com/watch/dd8d9bba322b10a3e9b4
