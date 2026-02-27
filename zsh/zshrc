@@ -153,9 +153,6 @@ alias bugwatchw="cd ~/code/neetozone/neeto-bugwatch-web"
 alias neetob="cd ~/code/neetozone/neetob"
 alias neetobd="cd ~/code/neetozone/neetob"
 
-alias start_rails="bundle exec rails server"
-alias start_vite="yarn dev --host"
-alias start_sidekiq="bundle exec sidekiq -C config/sidekiq.yml"
 
 # Away From Keyboard (AFK) - Start screen saver
 alias afk="open /System/Library/CoreServices/ScreenSaverEngine.app"
@@ -192,6 +189,36 @@ export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
 # Activate mise last so it can manage tool versions per-directory cleanly
 eval "$(mise activate zsh)"
+
+
+
+tunnel2() {
+  if [[ ! -f .dev_launch ]]; then
+    echo "Error: .dev_launch file not found in current directory"
+    return 1
+  fi
+
+  local port
+  port=$(grep '^PORT_NUMBER=' .dev_launch | cut -d= -f2)
+
+  if [[ -z "$port" ]]; then
+    echo "Error: PORT_NUMBER not found in .dev_launch"
+    return 1
+  fi
+
+  tunnelto --subdomain spinkart --port "$port"
+}
+
+alias start_tunnel=tunnel2
+alias start_tunnel2=tunnel2
+alias start_rails="bundle exec rails server"
+alias start_vite="yarn dev --host"
+alias start_frontend="yarn dev --host"
+alias start_ui="yarn dev --host"
+alias start_sidekiq="bundle exec sidekiq -C config/sidekiq.yml"
+alias start_background_worker="bundle exec sidekiq -C config/sidekiq.yml"
+alias start_backgroundworker="bundle exec sidekiq -C config/sidekiq.yml"
+alias start_bg="bundle exec sidekiq -C config/sidekiq.yml"
 
 DOTFILESD="$DEVBOXD/dotfiles"
 
