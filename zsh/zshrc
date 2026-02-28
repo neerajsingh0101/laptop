@@ -206,12 +206,14 @@ tunnel2() {
     return 1
   fi
 
+  echo "tunnelto --subdomain spinkart --port $port"
   tunnelto --subdomain spinkart --port "$port"
 }
 
 alias start_tunnel=tunnel2
 alias start_tunnel2=tunnel2
 alias start_rails="bundle exec rails server"
+alias start_server="bundle exec rails server"
 alias start_vite="yarn dev --host"
 alias start_frontend="yarn dev --host"
 alias start_ui="yarn dev --host"
