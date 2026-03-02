@@ -7,6 +7,7 @@
 [[ -f ~/.devbox-zshrc.local ]] && source ~/.devbox-zshrc.local
 
 LAPTOPD="$DEVBOXD/laptop"
+DOTFILESD="$DEVBOXD/dotfiles"
 
 # if condition is checking if homebrew is installed or not
 # `brew shellenv` prints a bunch of shell commands like export PATH=..., export HOMEBREW_PREFIX=..., etc.
@@ -117,11 +118,10 @@ alias h='history'
 
 alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 x.com
 
-alias laptop="code $LAPTOPD" # open laptop code
-
-# take me to the laptop directory
-alias laptopd="cd $LAPTOPD" # go to laptopd directory
-alias dotfilesd="cd $DEVBOXD/dotfiles" # go to dotfiles directory
+alias laptop="cd $LAPTOPD"   # go to laptop directory
+alias laptopd="cd $LAPTOPD"  # go to laptop directory
+alias dotfiles="cd $DOTFILESD"  # go to dotfiles directory
+alias dotfilesd="cd $DOTFILESD" # go to dotfiles directory
 
 # neeto repos
 neeto_repos=(auth form cal chat desk kb quiz site runner replay invoice planner course wireframe engage crm deploy ci git record tower publish playdash code pay bugwatch)
@@ -153,7 +153,9 @@ autoload -Uz compinit
 # It loads completion definitions so things like git <TAB> or brew <TAB> work nicely.
 compinit -C
 
-# Put your personal bins early
+# By placing the bin, utils and .local/bin at the front of $PATH,
+# executables in these directories take priority over
+# system-installed ones with the same name.
 export PATH="$LAPTOPD/bin:$LAPTOPD/utils:$HOME/.local/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
@@ -171,26 +173,6 @@ export PATH="/opt/homebrew/opt/curl/bin:$PATH"
 # Activate mise last so it can manage tool versions per-directory cleanly
 eval "$(mise activate zsh)"
 
-
-
-tunnel2() {
-  if [[ ! -f .dev_launch ]]; then
-    echo "Error: .dev_launch file not found in current directory"
-    return 1
-  fi
-
-  local port
-  port=$(grep '^PORT_NUMBER=' .dev_launch | cut -d= -f2)
-
-  if [[ -z "$port" ]]; then
-    echo "Error: PORT_NUMBER not found in .dev_launch"
-    return 1
-  fi
-
-  echo "tunnelto --subdomain spinkart --port $port"
-  tunnelto --subdomain spinkart --port "$port"
-}
-
 alias start_tunnel=tunnel2
 alias start_tunnel2=tunnel2
 alias start_rails="bundle exec rails server"
@@ -202,8 +184,6 @@ alias start_sidekiq="bundle exec sidekiq -C config/sidekiq.yml"
 alias start_background_worker="bundle exec sidekiq -C config/sidekiq.yml"
 alias start_backgroundworker="bundle exec sidekiq -C config/sidekiq.yml"
 alias start_bg="bundle exec sidekiq -C config/sidekiq.yml"
-
-DOTFILESD="$DEVBOXD/dotfiles"
 
 # Put any overriding things in personal dotfiles. Personal dotfiles
 # should be sibling to laptop repo and it should have a file calle
