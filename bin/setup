@@ -17,6 +17,17 @@ LAPTOPD="$DEVBOXD/laptop"
 
 # Remove destination (file/symlink/dir) and recreate symlink
 # If destination is a real file (not a symlink), back it up first
+echo_header() {
+  echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+  echo "$1"
+}
+
+echo_header_done() {
+  echo "Done!!!"
+  echo ""
+}
+
+
 link_force() {
   src="$1"
   dst="$2"
@@ -43,6 +54,7 @@ link_force() {
   ln -s -- "$src" "$dst"
 }
 
+echo_header "Setting up soft links for zshrc, gemrc, gitconfig, gitignore, irbrc, psqlrc & wezterm"
 link_force "$LAPTOPD/zsh/zshrc"          "$HOME/.zshrc"
 link_force "$LAPTOPD/zsh/.devbox"         "$HOME/.devbox"
 
@@ -52,13 +64,14 @@ link_force "$LAPTOPD/symlinks/.gitignore" "$HOME/.gitignore"
 link_force "$LAPTOPD/symlinks/.irbrc"    "$HOME/.irbrc"
 link_force "$LAPTOPD/symlinks/.psqlrc"   "$HOME/.psqlrc"
 link_force "$LAPTOPD/symlinks/.wezterm.lua"   "$HOME/.wezterm.lua"
+echo_header_done
 
 if [ -f "$LAPTOPD/symlinks/wezterm_local.lua" ]; then
   mkdir -p "$HOME/.config/wezterm"
   link_force "$LAPTOPD/symlinks/wezterm_local.lua"   "$HOME/.config/wezterm/wezterm_local.lua"
 fi
 
-
+echo_header "Setting up homebrew"
 # Install Homebrew if not already installed
 if ! command -v brew &> /dev/null; then
   echo "Homebrew not found. Installing..."
@@ -71,13 +84,17 @@ if ! command -v brew &> /dev/null; then
     eval "$(/usr/local/bin/brew shellenv)"
   fi
 fi
+echo_header_done
 
-# Make sure we're using the latest Homebrew.
+echo_header "Upgrade homebrew"
 brew update
+echo_header_done
 
-# Upgrade any already-installed formulae.
+echo_header "Upgrade any already-installed formulae"
 brew upgrade
+echo_header_done
 
+echo_header "Installing various things"
 brew install zoxide    # for jumping around
 brew install fzf
 brew install eza       # this is replacement for ls
@@ -93,6 +110,7 @@ brew install zsh-syntax-highlighting
 brew install mise
 brew install curl # curl that comes with Mac is highly outdated
 brew install aicommits
+brew install libyaml #mise needs it
 brew install postgresql@18
 brew install redis
 brew install font-hack-nerd-font
@@ -100,7 +118,6 @@ brew install openjdk@17
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
 brew tap elastic/tap
 brew install elastic/tap/elasticsearch-full
-
 
 # try install; if it fails due to an existing app, adopt; if adopt fails, force.
 cask_install() {
@@ -125,14 +142,17 @@ cask_install visual-studio-code
 cask_install wezterm
 cask_install meetingbar
 cask_install 1password
+echo_header_done
 
-
-# Install Claude Code
+echo_header "Installing Claude Code"
 /bin/bash -c "$(curl -fsSL https://claude.ai/install.sh)"
+echo_header_done
 
-# write ~/.gitconfig.local
+echo_header "Setting up gitconfig-local"
 ruby ./bin/setup-gitconfig-local.rb
+echo_header_done
 
+echo_header "Setting up raycast"
 echo ""
 echo "Would you like to reset Raycast settings and apply"
 echo "the ones provided by Neeto?"
@@ -157,22 +177,30 @@ if [[ "$answer" =~ ^[Cc](hange)?$ ]]; then
     [[ "$key" =~ ^[Dd]$ ]] && break
   done
 fi
+echo_header_done
 
 echo ""
-echo "Applying customize Macos"
+echo_header "Applying customize Macos configurations"
 echo "You will be asked to provide your laptop password"
 ./bin/customize-macos
+echo_header_done
 
 echo ""
+echo_header "Setting up GitHub SSH keys"
 echo "Would you like to set up a GitHub SSH key?"
 echo "If you already have one configured, then you can skip."
 read -p "Hit Enter to skip. Press c to set up your SSH key. " answer
 if [[ "$answer" =~ ^[Cc](hange)?$ ]]; then
   ./bin/setup-github-ssh-key
 fi
+echo_header_done
 
 # Tell mise to trust everything under directory code
 export MISE_TRUSTED_CONFIG_PATHS="$HOME/code"
+
+# mise needs it to compile Ruby properly
+export RUBY_CONFIGURE_OPTS="--with-libyaml-dir=$(brew --prefix libyaml)"
+
 
 echo ""
 mkdir -p "$DEVBOXD/../neetozone"
