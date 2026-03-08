@@ -56,19 +56,21 @@ set by dotfiles created by laptop.
 
 * Open [wezterm](https://wezterm.org/) instead of opening terminal or iterm application.
 * Shift + Option governs wezterm configuration.
-* Shift + Option + i -> split in two left hand side and right hand side
-* Shift + Option + u -> split in two top side and bottom side
+* Shift + Option + | -> split in two left hand side and right hand side
+* Shift + Option + _ -> split in two top side and bottom side
 * Shift + Option + h -> navigate to left pane
-* Shift + Option + l -> navigate to right pane
 * Shift + Option + j -> navigate to the bottom pane
 * Shift + Option + k -> navigate to the top pane
+* Shift + Option + l -> navigate to right pane
 * Shift + Option + w -> Quit the pane
-* Shift + Option + up arrow -> resize the pane and move up
-* Shift + Option + down arrow -> resize the pane and move down
 * Shift + Option + left arrow -> resize the pane and move left
+* Shift + Option + down arrow -> resize the pane and move down
+* Shift + Option + up arrow -> resize the pane and move up
 * Shift + Option + right arrow -> resize the pane and move right
 * Shift + Option + > -> switch to the tab on the right
 * Shift + Option + < -> switch to the tab on the left
+* Shift + Option + ( -> decrease font size
+* Shift + Option + ) -> increase font size
 * By default the tab name is the name of the running process. Press Shift + Option + r to rename the tab.
 
 # z command

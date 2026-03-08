@@ -6,13 +6,13 @@ function M.setup(config)
   config.keys = {
     -- Split (left/right)
     {
-      key = 'i',
+      key = '|',
       mods = 'SHIFT|OPT',
       action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
     },
     -- Split (top/bottom)
     {
-      key = 'u',
+      key = '_',
       mods = 'SHIFT|OPT',
       action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
     },
@@ -23,9 +23,9 @@ function M.setup(config)
       action = wezterm.action.ActivatePaneDirection 'Left',
     },
     {
-      key = 'l',
+      key = 'j',
       mods = 'SHIFT|OPT',
-      action = wezterm.action.ActivatePaneDirection 'Right',
+      action = wezterm.action.ActivatePaneDirection 'Down',
     },
     {
       key = 'k',
@@ -33,9 +33,9 @@ function M.setup(config)
       action = wezterm.action.ActivatePaneDirection 'Up',
     },
     {
-      key = 'j',
+      key = 'l',
       mods = 'SHIFT|OPT',
-      action = wezterm.action.ActivatePaneDirection 'Down',
+      action = wezterm.action.ActivatePaneDirection 'Right',
     },
     -- Close current pane
     {
@@ -50,9 +50,9 @@ function M.setup(config)
       action = wezterm.action.AdjustPaneSize { 'Left', 5 },
     },
     {
-      key = 'RightArrow',
+      key = 'DownArrow',
       mods = 'SHIFT|OPT',
-      action = wezterm.action.AdjustPaneSize { 'Right', 5 },
+      action = wezterm.action.AdjustPaneSize { 'Down', 5 },
     },
     {
       key = 'UpArrow',
@@ -60,9 +60,9 @@ function M.setup(config)
       action = wezterm.action.AdjustPaneSize { 'Up', 5 },
     },
     {
-      key = 'DownArrow',
+      key = 'RightArrow',
       mods = 'SHIFT|OPT',
-      action = wezterm.action.AdjustPaneSize { 'Down', 5 },
+      action = wezterm.action.AdjustPaneSize { 'Right', 5 },
     },
     -- Clear terminal (Cmd+K)
     {
@@ -115,6 +115,18 @@ function M.setup(config)
       key = '<',
       mods = 'SHIFT|OPT',
       action = wezterm.action.ActivateTabRelative(-1),
+    },
+    -- Decrease font size
+    {
+      key = '(',
+      mods = 'SHIFT|OPT',
+      action = wezterm.action.DecreaseFontSize,
+    },
+    -- Increase font size
+    {
+      key = ')',
+      mods = 'SHIFT|OPT',
+      action = wezterm.action.IncreaseFontSize,
     },
     -- Rename tab
     {
