@@ -35,7 +35,7 @@ system("createuser -s #{DB_USER} 2>/dev/null")
 # --- Drop and recreate database ---
 
 puts "Running db:drop db:create..."
-unless system("bin/rails db:drop db:create")
+unless system({ "DISABLE_DATABASE_ENVIRONMENT_CHECK" => "1" }, "bin/rails db:drop db:create")
   puts "ERROR: Failed to drop/create database"
   exit 1
 end
@@ -57,4 +57,12 @@ cmd = "pg_restore --verbose --clean --no-acl --no-owner -h localhost -U #{DB_USE
 puts "Running: #{cmd}"
 system(cmd)
 
-puts "Done!"
+# --- Fix environment metadata ---
+# The production dump marks the DB as 'production' in ar_internal_metadata,
+# which would block future destructive Rails commands. Reset it to development.
+
+puts "Setting environment metadata to development..."
+system("bin/rails runner \"ActiveRecord::Base.connection.execute(\\\"UPDATE ar_internal_metadata SET value = 'development' WHERE key = 'environment'\\\")\"")
+
+puts ""
+puts "Done!!!"
