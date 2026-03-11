@@ -9,6 +9,8 @@
 LAPTOPD="$DEVBOXD/laptop"
 DOTFILESD="$DEVBOXD/dotfiles"
 
+source "$LAPTOPD/zsh/auto_update.zshrc"
+
 # if condition is checking if homebrew is installed or not
 # `brew shellenv` prints a bunch of shell commands like export PATH=..., export HOMEBREW_PREFIX=..., etc.
 # that sets your environment so your shell can “find Homebrew” (and the stuff you install with it) in the right places.
