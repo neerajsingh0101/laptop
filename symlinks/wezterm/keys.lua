@@ -43,6 +43,12 @@ function M.setup(config)
       mods = 'SHIFT|OPT',
       action = wezterm.action.CloseCurrentPane { confirm = false },
     },
+    -- Close current tab (Cmd+W) without confirmation
+    {
+      key = 'w',
+      mods = 'SUPER',
+      action = wezterm.action.CloseCurrentTab { confirm = false },
+    },
     -- Resize panes
     {
       key = 'LeftArrow',
