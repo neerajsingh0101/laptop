@@ -119,8 +119,22 @@ arch -arm64 brew install elastic/tap/elasticsearch-full
 cask_install() {
   local cask="$1"
   if arch -arm64 brew list --cask "$cask" >/dev/null 2>&1; then
-    echo "Already installed: $cask"
-    return 0
+    # Verify the app actually exists in /Applications (brew may think it's
+    # installed even if the .app was manually removed)
+    local app_missing=false
+    local app_name
+    app_name=$(arch -arm64 brew info --cask "$cask" 2>/dev/null | grep '\.app (App)' | head -1 | sed 's/.*\///' | sed 's/ (App)//')
+    if [ -n "$app_name" ] && [ ! -d "/Applications/$app_name" ]; then
+      app_missing=true
+    fi
+
+    if [ "$app_missing" = false ]; then
+      echo "Already installed: $cask"
+      return 0
+    fi
+
+    echo "$cask is registered in brew but app is missing. Reinstalling..."
+    arch -arm64 brew reinstall --cask "$cask" && return 0
   fi
 
   arch -arm64 brew install --cask "$cask" && return 0
