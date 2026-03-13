@@ -109,6 +109,8 @@ arch -arm64 brew install zsh-syntax-highlighting
 arch -arm64 brew install mise
 arch -arm64 brew install curl # curl that comes with Mac is highly outdated
 arch -arm64 brew install aicommits
+npm install -g opencommit
+oco config set OCO_GITPUSH=false
 arch -arm64 brew install libyaml #mise needs it
 arch -arm64 brew install postgresql@18
 arch -arm64 brew install redis

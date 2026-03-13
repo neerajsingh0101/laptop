@@ -17,6 +17,9 @@ config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
 config.use_fancy_tab_bar = true
 config.tab_bar_at_bottom = true
+config.window_frame = {
+  font_size = config.font_size + 1,
+}
 config.window_padding = {
   left = 10,
   right = 10,
@@ -54,6 +57,18 @@ function basename(s)
 	return string.gsub(s, "(.*[/\\])(.*)", "%2")
 end
 
+-- Read Claude Code status from /tmp/claude-wezterm-<pane_id>
+-- Hook commands write "permission_prompt" or "done" to this file
+local function read_claude_status(pane_id)
+	local f = io.open("/tmp/claude-wezterm-" .. tostring(pane_id), "r")
+	if f then
+		local status = f:read("*l")
+		f:close()
+		return status
+	end
+	return nil
+end
+
 -- Set the tab title to currently running foreground process name
 -- If the current directory contains "neeto-", strip that prefix from the tab name
 -- e.g. neeto-form-web becomes form-web
@@ -75,12 +90,32 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 			title = basename(pane.foreground_process_name) .. " " .. (tab.tab_index + 1)
 		end
 	end
-	local color = "#0f1419"
-	if tab.is_active then
-		color = "darkblue"
+
+	-- Check Claude Code status for all panes in this tab
+	local claude_status = nil
+	for _, p in ipairs(tab.panes) do
+		local status = read_claude_status(p.pane_id)
+		if status == "permission_prompt" then
+			claude_status = "permission_prompt"
+			break
+		elseif status == "done" then
+			claude_status = claude_status or "done"
+		end
+	end
+
+	local bg_color = "#0f1419"
+	local fg_color = "white"
+	if claude_status == "permission_prompt" then
+		bg_color = "#cc3333"
+	elseif claude_status == "done" then
+		bg_color = "#33cc33"
+		fg_color = "black"
+	elseif tab.is_active then
+		bg_color = "darkblue"
 	end
 	return {
-		{ Background = { Color = color } },
+		{ Background = { Color = bg_color } },
+		{ Foreground = { Color = fg_color } },
 		{ Text = " " .. title .. " " },
 	}
 end)

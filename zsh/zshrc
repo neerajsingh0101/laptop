@@ -113,7 +113,7 @@ fi
 
 alias cld="claude"
 alias cldd="claude --dangerously-skip-permissions"
-cldw() { claude --dangerously-skip-permissions --worktree "$@"; }
+cldw() { local slug=$(echo "$*" | tr -s ' ' '-'); claude --dangerously-skip-permissions --worktree "$slug"; }
 
 # Easier navigation
 alias cd..="cd .."
@@ -141,6 +141,9 @@ alias laptop="cd $LAPTOPD"   # go to laptop directory
 alias laptopd="cd $LAPTOPD"  # go to laptop directory
 alias dotfiles="cd $DOTFILESD"  # go to dotfiles directory
 alias dotfilesd="cd $DOTFILESD" # go to dotfiles directory
+
+
+alias aic="oco --yes" # aic stands for aicommit
 
 # neeto repos
 neeto_repos=(auth form cal chat desk kb quiz site runner replay invoice planner course wireframe engage crm deploy ci git record tower publish playdash code pay bugwatch)
