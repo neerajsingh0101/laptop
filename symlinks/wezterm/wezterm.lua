@@ -103,6 +103,14 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
 		end
 	end
 
+	-- Clear "done" status when user switches to this tab
+	if tab.is_active and claude_status == "done" then
+		for _, p in ipairs(tab.panes) do
+			os.remove("/tmp/claude-wezterm-" .. tostring(p.pane_id))
+		end
+		claude_status = nil
+	end
+
 	local bg_color = "#0f1419"
 	local fg_color = "white"
 	if claude_status == "permission_prompt" then
