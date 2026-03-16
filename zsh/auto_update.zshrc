@@ -3,7 +3,7 @@ _laptop_auto_update() {
   local update_stamp="$HOME/.laptop_update"
   local now=$(date +%s)
   local last=0
-  local days=7
+  local days=1
 
   if [[ -f "$update_stamp" ]]; then
     last=$(cat "$update_stamp")
