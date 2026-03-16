@@ -113,7 +113,14 @@ fi
 
 alias cld="claude"
 alias cldd="claude --dangerously-skip-permissions"
-cldw() { local slug=$(echo "$*" | tr -s ' ' '-'); echo -n "$(pwd)/.claude/worktrees/$slug" | pbcopy; claude --dangerously-skip-permissions --worktree "$slug"; }
+cldw() {
+  if [ "$(git branch --show-current)" = "main" ]; then
+    git pull
+  fi
+  local slug=$(echo "$*" | tr -s ' ' '-')
+  echo -n "$(pwd)/.claude/worktrees/$slug" | pbcopy
+  claude --dangerously-skip-permissions --worktree "$slug"
+}
 
 # Easier navigation
 alias cd..="cd .."
