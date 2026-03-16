@@ -69,8 +69,12 @@ puts "Setting environment metadata to development and resetting all passwords to
 require "tempfile"
 script = Tempfile.new(["load_data_dump", ".rb"])
 script.write(<<~RUBY)
-  ActiveRecord::Base.connection.execute("UPDATE ar_internal_metadata SET value = 'development' WHERE key = 'environment'")
-  User.update_all(encrypted_password: Devise::Encryptor.digest(User, "welcome"))
+  if ActiveRecord::Base.connection.table_exists?(:ar_internal_metadata)
+    ActiveRecord::Base.connection.execute("UPDATE ar_internal_metadata SET value = 'development' WHERE key = 'environment'")
+  end
+  if ActiveRecord::Base.connection.table_exists?(:users)
+    User.update_all(encrypted_password: Devise::Encryptor.digest(User, "welcome"))
+  end
 RUBY
 script.close
 
