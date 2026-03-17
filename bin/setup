@@ -92,35 +92,35 @@ fi
 echo_header_done
 
 echo_header "Upgrade homebrew"
-arch -arm64 brew update
+arch -arm64 brew update --verbose
 echo_header_done
 
 echo_header "Upgrade any already-installed formulae"
-arch -arm64 brew upgrade
+arch -arm64 brew upgrade --verbose
 echo_header_done
 
 echo_header "Installing various things"
-arch -arm64 brew install zoxide    # for jumping around
-arch -arm64 brew install fzf
-arch -arm64 brew install eza       # this is replacement for ls
-arch -arm64 brew install git
-arch -arm64 brew install git-delta # Used in pager
-arch -arm64 brew install httpd     # ab(apache bench) comes with this
-arch -arm64 brew install k6        # see bin/simulate-traffic-k6
-arch -arm64 brew install gh        # GitHub CLI
-arch -arm64 brew install jq
-#arch -arm64 brew install yarn
-arch -arm64 brew install zsh-autosuggestions
-arch -arm64 brew install zsh-syntax-highlighting
-arch -arm64 brew install mise
-arch -arm64 brew install curl # curl that comes with Mac is highly outdated
-arch -arm64 brew install aicommits
+arch -arm64 brew install --verbose zoxide    # for jumping around
+arch -arm64 brew install --verbose fzf
+arch -arm64 brew install --verbose eza       # this is replacement for ls
+arch -arm64 brew install --verbose git
+arch -arm64 brew install --verbose git-delta # Used in pager
+arch -arm64 brew install --verbose httpd     # ab(apache bench) comes with this
+arch -arm64 brew install --verbose k6        # see bin/simulate-traffic-k6
+arch -arm64 brew install --verbose gh        # GitHub CLI
+arch -arm64 brew install --verbose jq
+#arch -arm64 brew install --verbose yarn
+arch -arm64 brew install --verbose zsh-autosuggestions
+arch -arm64 brew install --verbose zsh-syntax-highlighting
+arch -arm64 brew install --verbose mise
+arch -arm64 brew install --verbose curl # curl that comes with Mac is highly outdated
+arch -arm64 brew install --verbose aicommits
 npm install -g opencommit
 oco config set OCO_GITPUSH=false
-arch -arm64 brew install libyaml #mise needs it
-arch -arm64 brew install postgresql@18
-arch -arm64 brew install redis
-arch -arm64 brew install font-hack-nerd-font
+arch -arm64 brew install --verbose libyaml #mise needs it
+arch -arm64 brew install --verbose postgresql@18
+arch -arm64 brew install --verbose redis
+arch -arm64 brew install --verbose font-hack-nerd-font
 
 #arch -arm64 brew install openjdk@17
 #export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
@@ -146,16 +146,16 @@ cask_install() {
     fi
 
     echo "$cask is registered in brew but app is missing. Reinstalling..."
-    arch -arm64 brew reinstall --cask "$cask" && return 0
+    arch -arm64 brew reinstall --verbose --cask "$cask" && return 0
   fi
 
-  arch -arm64 brew install --cask "$cask" && return 0
+  arch -arm64 brew install --verbose --cask "$cask" && return 0
 
   echo "Install failed for $cask; trying --adopt..."
-  arch -arm64 brew install --cask "$cask" --adopt && return 0
+  arch -arm64 brew install --verbose --cask "$cask" --adopt && return 0
 
   echo "Adopt failed for $cask; trying --force..."
-  arch -arm64 brew install --cask "$cask" --force
+  arch -arm64 brew install --verbose --cask "$cask" --force
 }
 
 cask_install raycast
