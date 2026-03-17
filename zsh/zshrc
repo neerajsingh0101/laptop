@@ -114,6 +114,17 @@ fi
 alias cld="claude"
 alias cldd="claude --dangerously-skip-permissions"
 cldw() {
+  if [ $# -eq 0 ]; then
+    echo "ERROR: cldw expects an argument. Why don't you tell cldw what you are working on."
+    return 1
+  fi
+
+  # If inside a .claude subdirectory, navigate to just above it
+  local current_dir="$(pwd)"
+  if [[ "$current_dir" == */.claude/* || "$current_dir" == */.claude ]]; then
+    cd "${current_dir%%/.claude*}"
+  fi
+
   if [ "$(git branch --show-current)" = "main" ]; then
     git pull
   fi
