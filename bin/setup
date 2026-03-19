@@ -255,3 +255,7 @@ DOTFILESD="$DEVBOXD/dotfiles"
 if [ -d "$DOTFILESD" ] && [ -f "$DOTFILESD/setup" ]; then
   "$DOTFILESD/setup"
 fi
+
+echo ""
+echo "Reloading shell..."
+exec "$SHELL" -l
