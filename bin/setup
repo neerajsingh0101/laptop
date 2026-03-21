@@ -123,6 +123,7 @@ arch -arm64 brew install --verbose postgresql@18
 arch -arm64 brew install --verbose redis
 arch -arm64 brew install --verbose font-hack-nerd-font
 
+arch -arm64 brew install --verbose opensearch # elastic search alternative
 #arch -arm64 brew install openjdk@17
 #export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
 #arch -arm64 brew tap elastic/tap
