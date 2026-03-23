@@ -169,7 +169,26 @@ alias rm='rm -i -v'
 
 alias setup='./bin/setup-mise'
 alias launch='./bin/launch'
-alias stl='setup && launch'
+stl() {
+  local repo_name=$(basename "$(pwd)")
+  if [[ "$repo_name" == "neeto-website" || "$repo_name" == "bigbinary-website" ]]; then
+    yarn install
+    yarn dev &
+    local dev_pid=$!
+    local url="http://localhost:3000"
+    local attempts=120
+    while (( attempts-- > 0 )); do
+      if curl -s -o /dev/null -w '' "$url" 2>/dev/null; then
+        open "$url"
+        break
+      fi
+      sleep 0.5
+    done
+    wait $dev_pid
+  else
+    ./bin/setup-mise && ./bin/launch
+  fi
+}
 alias hosts='sudo $EDITOR /etc/hosts'   # yes I occasionally 127.0.0.1 x.com
 
 alias laptop="cd $LAPTOPD"   # go to laptop directory
