@@ -285,3 +285,16 @@ start_nano() {
 if [ -d "$DOTFILESD" ] && [ -f "$DOTFILESD/.zshrc" ]; then
   source "$DOTFILESD/.zshrc"
 fi
+
+
+
+echo "++++++++++++++++++++++++++++++++++++++++++++++"
+echo "++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+++           PAY ATTENTION              +++"
+echo ""
+echo "Laptop has been renamed to laptonite"
+echo "Visit https://github.com/neerajsingh0101/laptonite and see the installation instructions in README."
+echo "When prompted for anything you can just hit enter."
+echo ""
+echo "++++++++++++++++++++++++++++++++++++++++++++++"
+echo "++++++++++++++++++++++++++++++++++++++++++++++"
