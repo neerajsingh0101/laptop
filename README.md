@@ -1,3 +1,5 @@
+# This repo has moved to https://github.com/neerajsingh0101/laptonite .
+
 # Introduction
 
 A script to setup a Mac laptop with sensible defaults to get started.
